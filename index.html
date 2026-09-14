@@ -1,846 +1,925 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Leniel Bayoran | Virtual Assistant & AI Content Creator</title>
+<title>Leniel Bayoran | Virtual Assistant & AI Content Creator</title>
 
-  <style>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#031725;
+    color:#ffffff;
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* NAVIGATION */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:999;
+    background:rgba(2,18,30,.92);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid rgba(66,211,255,.12);
+}
+
+.nav-inner{
+    max-width:1200px;
+    margin:auto;
+    padding:17px 5%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-weight:800;
+    letter-spacing:2px;
+    font-size:20px;
+}
+
+.logo span{
+    color:#27d3ff;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+nav ul li a{
+    font-size:13px;
+    color:#c9d7e1;
+    transition:.25s;
+}
+
+nav ul li a:hover{
+    color:#27d3ff;
+}
+
+/* HERO */
+
+.hero{
+    min-height:88vh;
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    align-items:center;
+    max-width:1200px;
+    margin:auto;
+    padding:70px 5%;
+    gap:40px;
+}
+
+.kicker{
+    color:#27d3ff;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:3px;
+    margin-bottom:15px;
+}
+
+.hero h1{
+    font-size:clamp(45px,7vw,76px);
+    line-height:1;
+    margin-bottom:18px;
+}
+
+.hero h1 span{
+    color:#27d3ff;
+}
+
+.hero h2{
+    color:#c7d5de;
+    font-size:21px;
+    font-weight:500;
+    margin-bottom:20px;
+}
+
+.hero p{
+    color:#93a9b8;
+    max-width:650px;
+    font-size:16px;
+}
+
+.buttons{
+    margin-top:30px;
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:12px 20px;
+    border-radius:7px;
+    font-size:13px;
+    font-weight:700;
+    display:inline-block;
+}
+
+.btn-primary{
+    background:#24c9ef;
+    color:#02131f;
+}
+
+.btn-outline{
+    border:1px solid #24c9ef;
+    color:#24c9ef;
+}
+
+.hero-photo{
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+    position:relative;
+}
+
+.hero-photo::before{
+    content:"";
+    position:absolute;
+    width:350px;
+    height:350px;
+    border-radius:50%;
+    background:#0a526c;
+    filter:blur(80px);
+    opacity:.35;
+}
+
+.hero-photo img{
+    width:100%;
+    max-width:430px;
+    position:relative;
+    z-index:2;
+    filter:drop-shadow(0 20px 25px rgba(0,0,0,.45));
+}
+
+/* SECTION */
+
+section{
+    padding:85px 0;
+}
+
+.section-label{
+    color:#25d3ff;
+    letter-spacing:3px;
+    font-size:11px;
+    text-transform:uppercase;
+    font-weight:700;
+    margin-bottom:7px;
+}
+
+.section-title{
+    font-size:32px;
+    margin-bottom:12px;
+}
+
+.section-description{
+    color:#8fa4b3;
+    max-width:720px;
+    margin-bottom:38px;
+}
+
+/* ABOUT */
+
+.about{
+    background:#041b2b;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1.3fr .7fr;
+    gap:45px;
+}
+
+.about-text p{
+    color:#a2b5c2;
+    margin-bottom:15px;
+}
+
+.quick-info{
+    border:1px solid #0c5670;
+    padding:28px;
+    border-radius:10px;
+    background:#052031;
+}
+
+.quick-info h3{
+    margin-bottom:18px;
+}
+
+.quick-info p{
+    margin:11px 0;
+    color:#a9bbc7;
+    font-size:14px;
+}
+
+/* SERVICES */
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+    margin-top:30px;
+}
+
+.service{
+    background:#052031;
+    border:1px solid #0a5570;
+    border-radius:9px;
+    padding:25px;
+    transition:.25s;
+}
+
+.service:hover{
+    transform:translateY(-6px);
+    border-color:#26d4ff;
+}
+
+.service-icon{
+    font-size:24px;
+    margin-bottom:15px;
+}
+
+.service h3{
+    font-size:16px;
+    margin-bottom:10px;
+}
+
+.service p{
+    font-size:13px;
+    color:#8fa4b3;
+}
+
+/* PORTFOLIO */
+
+.portfolio{
+    background:#031725;
+}
+
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:28px;
+}
+
+.project-card{
+    background:#052031;
+    border:1px solid #0b5670;
+    border-radius:12px;
+    overflow:hidden;
+    transition:.25s;
+}
+
+.project-card:hover{
+    transform:translateY(-5px);
+    border-color:#25d3ff;
+}
+
+.video-wrap{
+    background:#000;
+    padding:10px;
+}
+
+.video-wrap video{
+    display:block;
+    width:100%;
+    aspect-ratio:16/9;
+    object-fit:contain;
+    background:#000;
+    border-radius:6px;
+}
+
+.project-info{
+    padding:24px;
+}
+
+.project-category{
+    color:#25d3ff;
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-weight:700;
+}
+
+.project-info h3{
+    font-size:20px;
+    margin:8px 0 10px;
+}
+
+.project-info p{
+    font-size:13px;
+    color:#94a8b6;
+    margin-bottom:17px;
+}
+
+.tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+}
+
+.tag{
+    padding:6px 10px;
+    border-radius:20px;
+    border:1px solid #14617a;
+    color:#bdeffc;
+    font-size:10px;
+}
+
+.disclaimer{
+    font-size:10px!important;
+    color:#708896!important;
+    margin-top:16px;
+}
+
+/* SKILLS */
+
+.skills{
+    background:#041b2b;
+}
+
+.skills-list{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.skill{
+    border:1px solid #0e617b;
+    border-radius:30px;
+    padding:8px 14px;
+    color:#b8eefa;
+    font-size:11px;
+    background:#052233;
+}
+
+/* CONTACT */
+
+.contact-card{
+    border:1px solid #0b5670;
+    background:#052031;
+    padding:45px;
+    border-radius:12px;
+    text-align:center;
+}
+
+.contact-card h2{
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+.contact-card p{
+    color:#94a9b7;
+    margin-bottom:25px;
+}
+
+/* FOOTER */
+
+footer{
+    border-top:1px solid rgba(39,211,255,.1);
+    padding:25px;
+    text-align:center;
+    color:#6e8797;
+    font-size:11px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    .hero{
+        grid-template-columns:1fr;
+        text-align:center;
     }
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background:
-        radial-gradient(circle at 15% 20%, rgba(105, 90, 255, 0.20), transparent 35%),
-        radial-gradient(circle at 85% 30%, rgba(0, 191, 255, 0.15), transparent 30%),
-        linear-gradient(135deg, #07111f, #101c32, #07111f);
-      color: white;
-      min-height: 100vh;
+    .hero p{
+        margin:auto;
     }
 
-
-    /* NAVIGATION */
-
-    nav {
-      width: 100%;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(5, 15, 30, 0.65);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+    .buttons{
+        justify-content:center;
     }
 
-    .nav-container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 18px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    .hero-photo{
+        order:-1;
     }
 
-    .logo {
-      font-size: 22px;
-      font-weight: 800;
-      letter-spacing: 1px;
+    .hero-photo img{
+        max-width:300px;
     }
 
-    .logo span {
-      color: #7dd3fc;
+    .about-grid{
+        grid-template-columns:1fr;
     }
 
-    .nav-links {
-      display: flex;
-      gap: 28px;
+    .services-grid{
+        grid-template-columns:repeat(2,1fr);
     }
 
-    .nav-links a {
-      color: #e8eef7;
-      text-decoration: none;
-      font-size: 14px;
-      transition: 0.25s;
+    .project-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:650px){
+
+    nav ul{
+        display:none;
     }
 
-    .nav-links a:hover {
-      color: #7dd3fc;
+    .services-grid{
+        grid-template-columns:1fr;
     }
 
-
-    /* HERO */
-
-    .hero {
-      max-width: 1200px;
-      min-height: 88vh;
-      margin: auto;
-      padding: 80px 30px 40px;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      align-items: center;
-      gap: 50px;
+    section{
+        padding:65px 0;
     }
 
-    .hero-text .small-title {
-      color: #7dd3fc;
-      font-size: 15px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      margin-bottom: 20px;
+    .hero h1{
+        font-size:45px;
     }
-
-    .hero-text h1 {
-      font-size: clamp(46px, 7vw, 82px);
-      line-height: 0.95;
-      margin-bottom: 25px;
-    }
-
-    .hero-text h1 span {
-      background: linear-gradient(90deg, #7dd3fc, #a78bfa);
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-
-    .hero-text h2 {
-      font-size: 23px;
-      color: #cbd5e1;
-      margin-bottom: 22px;
-      font-weight: 500;
-    }
-
-    .hero-text p {
-      color: #aebed1;
-      line-height: 1.8;
-      max-width: 650px;
-      font-size: 17px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 15px;
-      margin-top: 35px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 25px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 700;
-      transition: 0.3s;
-    }
-
-    .primary-btn {
-      background: linear-gradient(90deg, #38bdf8, #8b5cf6);
-      color: white;
-    }
-
-    .secondary-btn {
-      border: 1px solid rgba(255,255,255,.20);
-      background: rgba(255,255,255,.06);
-      color: white;
-      backdrop-filter: blur(12px);
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-    }
-
-
-    /* PROFILE PHOTO */
-
-    .hero-image {
-      display: flex;
-      justify-content: center;
-      position: relative;
-    }
-
-    .photo-glow {
-      width: 450px;
-      height: 450px;
-      position: absolute;
-      border-radius: 50%;
-      background: radial-gradient(
-        circle,
-        rgba(56, 189, 248, 0.28),
-        rgba(139, 92, 246, 0.16),
-        transparent 70%
-      );
-      filter: blur(10px);
-    }
-
-    .hero-image img {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-      max-width: 460px;
-      height: auto;
-      object-fit: contain;
-      filter: drop-shadow(0px 20px 25px rgba(0,0,0,.45));
-    }
-
-
-    /* GENERAL */
-
-    section {
-      padding: 100px 30px;
-    }
-
-    .container {
-      max-width: 1150px;
-      margin: auto;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 55px;
-    }
-
-    .section-title p {
-      color: #7dd3fc;
-      text-transform: uppercase;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      margin-bottom: 10px;
-    }
-
-    .section-title h2 {
-      font-size: 38px;
-    }
-
-    .glass {
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.10);
-      border-radius: 24px;
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      box-shadow: 0 20px 50px rgba(0,0,0,.18);
-    }
-
-
-    /* ABOUT */
-
-    .about-box {
-      padding: 45px;
-    }
-
-    .about-box p {
-      color: #b7c4d6;
-      font-size: 17px;
-      line-height: 1.9;
-      text-align: center;
-      max-width: 900px;
-      margin: auto;
-    }
-
-
-    /* SERVICES */
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .service-card {
-      padding: 32px;
-      transition: .3s;
-    }
-
-    .service-card:hover {
-      transform: translateY(-7px);
-      border-color: rgba(125,211,252,.35);
-    }
-
-    .service-icon {
-      font-size: 35px;
-      margin-bottom: 18px;
-    }
-
-    .service-card h3 {
-      font-size: 21px;
-      margin-bottom: 15px;
-    }
-
-    .service-card p {
-      color: #acbacd;
-      line-height: 1.7;
-    }
-
-
-    /* PROJECT */
-
-    .project-card {
-      overflow: hidden;
-      display: grid;
-      grid-template-columns: 0.85fr 1.15fr;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .project-video {
-      background: rgba(0,0,0,.35);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 24px;
-    }
-
-    .project-video video {
-      width: 100%;
-      max-height: 600px;
-      border-radius: 18px;
-      background: black;
-    }
-
-    .project-info {
-      padding: 45px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .project-label {
-      display: inline-block;
-      width: fit-content;
-      padding: 7px 12px;
-      border-radius: 50px;
-      background: rgba(56,189,248,.12);
-      color: #7dd3fc;
-      border: 1px solid rgba(125,211,252,.20);
-      font-size: 12px;
-      letter-spacing: 1px;
-      margin-bottom: 20px;
-    }
-
-    .project-info h3 {
-      font-size: 30px;
-      margin-bottom: 17px;
-    }
-
-    .project-info p {
-      color: #b2bfd1;
-      line-height: 1.8;
-      margin-bottom: 22px;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-    }
-
-    .tag {
-      background: rgba(255,255,255,.07);
-      padding: 8px 11px;
-      border-radius: 8px;
-      font-size: 12px;
-      color: #dce5ef;
-      border: 1px solid rgba(255,255,255,.08);
-    }
-
-    .disclaimer {
-      margin-top: 25px;
-      font-size: 11px !important;
-      color: #8291a6 !important;
-      line-height: 1.6 !important;
-    }
-
-
-    /* SKILLS */
-
-    .skills-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 13px;
-    }
-
-    .skill {
-      padding: 13px 18px;
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.10);
-      border-radius: 12px;
-      color: #dbe5f0;
-    }
-
-
-    /* CONTACT */
-
-    .contact-box {
-      text-align: center;
-      max-width: 850px;
-      margin: auto;
-      padding: 55px;
-    }
-
-    .contact-box h2 {
-      font-size: 38px;
-      margin-bottom: 18px;
-    }
-
-    .contact-box p {
-      color: #acbacd;
-      margin-bottom: 30px;
-      line-height: 1.8;
-    }
-
-
-    /* FOOTER */
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      color: #718096;
-      font-size: 13px;
-      border-top: 1px solid rgba(255,255,255,.06);
-    }
-
-
-    /* MOBILE */
-
-    @media(max-width: 900px) {
-
-      .hero {
-        grid-template-columns: 1fr;
-        text-align: center;
-        padding-top: 60px;
-      }
-
-      .hero-image {
-        order: -1;
-      }
-
-      .hero-image img {
-        max-width: 320px;
-      }
-
-      .photo-glow {
-        width: 300px;
-        height: 300px;
-      }
-
-      .hero-text p {
-        margin: auto;
-      }
-
-      .hero-buttons {
-        justify-content: center;
-      }
-
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .project-card {
-        grid-template-columns: 1fr;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-    }
-
-    @media(max-width: 550px) {
-
-      section {
-        padding: 70px 20px;
-      }
-
-      .hero {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
-
-      .hero-text h1 {
-        font-size: 45px;
-      }
-
-      .project-info,
-      .about-box,
-      .contact-box {
-        padding: 30px 22px;
-      }
-
-    }
-
-  </style>
+}
+</style>
 </head>
 
-
 <body>
-
 
 <!-- NAVIGATION -->
 
 <nav>
+    <div class="nav-inner">
 
-  <div class="nav-container">
+        <div class="logo">
+            LENIEL<span>.</span>
+        </div>
 
-    <div class="logo">
-      Leniel<span>.</span>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
     </div>
-
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-    </div>
-
-  </div>
-
 </nav>
-
 
 
 <!-- HERO -->
 
-<div class="hero">
+<section class="hero" id="home">
 
-  <div class="hero-text">
+    <div>
 
-    <div class="small-title">
-      Virtual Assistant • AI Content Creator
-    </div>
+        <div class="kicker">
+            Virtual Assistant • AI Content Creator
+        </div>
 
-    <h1>
-      Hi, I'm <span>Leniel Bayoran</span>
-    </h1>
+        <h1>
+            Leniel <span>Bayoran</span>
+        </h1>
 
-    <h2>
-      Administrative Support & Digital Content Creator
-    </h2>
+        <h2>
+            Administrative Support & Digital Content Creator
+        </h2>
 
-    <p>
-      I help businesses and professionals stay organized, create engaging
-      digital content, and improve their online presence through reliable
-      administrative support, AI-assisted content creation, short-form videos,
-      and creative digital solutions.
-    </p>
+        <p>
+            I provide dependable administrative support while creating
+            engaging AI-assisted digital content, short-form promotional
+            videos and social media materials for modern businesses.
+        </p>
 
-    <div class="hero-buttons">
+        <div class="buttons">
 
-      <a href="#portfolio" class="btn primary-btn">
-        View My Work
-      </a>
+            <a href="#portfolio" class="btn btn-primary">
+                View Selected Work
+            </a>
 
-      <a
-        href="https://github.com/Leniel1988"
-        target="_blank"
-        class="btn secondary-btn"
-      >
-        GitHub Profile
-      </a>
+            <a href="#contact" class="btn btn-outline">
+                Let's Work Together
+            </a>
+
+        </div>
 
     </div>
 
-  </div>
 
+    <div class="hero-photo">
 
-  <div class="hero-image">
-
-    <div class="photo-glow"></div>
-
-    <img
-      src="leniel-cutout.png"
-      alt="Leniel Bayoran"
-    >
-
-  </div>
-
-</div>
-
-
-
-<!-- ABOUT -->
-
-<section id="about">
-
-  <div class="container">
-
-    <div class="section-title">
-      <p>About Me</p>
-      <h2>Who I Am</h2>
-    </div>
-
-    <div class="about-box glass">
-
-      <p>
-        I am a detail-oriented Virtual Assistant, Administrative Support
-        professional, and AI Content Creator. I combine organization,
-        communication, creativity, and emerging AI tools to support day-to-day
-        business operations and create engaging digital content. I am
-        continually developing my skills in AI-assisted video creation,
-        social media content, prompt engineering, and digital marketing.
-      </p>
+        <img
+            src="leniel-cutout.png"
+            alt="Leniel Bayoran"
+        >
 
     </div>
-
-  </div>
 
 </section>
-
 
 
 <!-- SERVICES -->
 
 <section id="services">
 
-  <div class="container">
+<div class="container">
 
-    <div class="section-title">
-      <p>What I Can Do</p>
-      <h2>My Services</h2>
+    <div class="section-label">
+        What I Do
     </div>
+
+    <h2 class="section-title">
+        Services & Creative Support
+    </h2>
+
+    <p class="section-description">
+        A combination of administrative experience and modern digital
+        content creation.
+    </p>
 
 
     <div class="services-grid">
 
+        <div class="service">
 
-      <div class="service-card glass">
+            <div class="service-icon">🎬</div>
 
-        <div class="service-icon">💻</div>
+            <h3>Video Editing</h3>
 
-        <h3>Virtual Assistance</h3>
-
-        <p>
-          Administrative support, document organization, data management,
-          written communication, research, and day-to-day remote assistance.
-        </p>
-
-      </div>
-
-
-      <div class="service-card glass">
-
-        <div class="service-icon">✨</div>
-
-        <h3>AI Content Creation</h3>
-
-        <p>
-          AI-assisted images, promotional concepts, video prompts,
-          short-form social media videos, product content, and creative
-          digital campaigns.
-        </p>
-
-      </div>
-
-
-      <div class="service-card glass">
-
-        <div class="service-icon">🎬</div>
-
-        <h3>Social Media Content</h3>
-
-        <p>
-          Reels and TikTok concepts, captions, hooks, product descriptions,
-          promotional posts, visual storytelling, and short-form content.
-        </p>
-
-      </div>
-
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- PORTFOLIO -->
-
-<section id="portfolio">
-
-  <div class="container">
-
-    <div class="section-title">
-      <p>Featured Project</p>
-      <h2>My Creative Work</h2>
-    </div>
-
-
-    <div class="project-card glass">
-
-
-      <div class="project-video">
-
-        <video controls playsinline>
-
-          <source
-            src="202609142159.mp4"
-            type="video/mp4"
-          >
-
-          Your browser does not support the video tag.
-
-        </video>
-
-      </div>
-
-
-      <div class="project-info">
-
-        <span class="project-label">
-          AI CONTENT CREATION
-        </span>
-
-        <h3>
-          AI Social Media Product Advertisement
-        </h3>
-
-        <p>
-          A short-form promotional video created using AI-assisted content
-          creation techniques. This project demonstrates concept development,
-          prompt engineering, visual storytelling, AI video generation,
-          social media content planning, and video editing.
-        </p>
-
-        <p>
-          The content was designed in a Reel/TikTok-style format to demonstrate
-          how AI tools can be used to create engaging promotional content for
-          digital and social media platforms.
-        </p>
-
-
-        <div class="tags">
-
-          <span class="tag">AI Content Creation</span>
-
-          <span class="tag">Google Flow</span>
-
-          <span class="tag">Prompt Engineering</span>
-
-          <span class="tag">Social Media</span>
-
-          <span class="tag">Reels / TikTok</span>
-
-          <span class="tag">Video Editing</span>
-
-          <span class="tag">Visual Storytelling</span>
+            <p>
+                Short-form video, product advertisements,
+                social media content and promotional editing.
+            </p>
 
         </div>
 
 
-        <p class="disclaimer">
-          Portfolio concept created to demonstrate AI-assisted content
-          creation and social media advertising skills. This project is
-          not presented as an official campaign or endorsement by any
-          featured brand.
-        </p>
+        <div class="service">
 
-      </div>
+            <div class="service-icon">✨</div>
+
+            <h3>AI Content Creation</h3>
+
+            <p>
+                AI-generated visuals, promotional concepts,
+                creative prompting and marketing content.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <div class="service-icon">💻</div>
+
+            <h3>Virtual Assistance</h3>
+
+            <p>
+                Reliable digital support, online research,
+                organization and client communication.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <div class="service-icon">📄</div>
+
+            <h3>Administrative Support</h3>
+
+            <p>
+                Document preparation, records management,
+                data entry and correspondence.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+<div class="container">
+
+    <div class="section-label">
+        About Me
+    </div>
+
+    <h2 class="section-title">
+        Creativity backed by professional experience.
+    </h2>
+
+
+    <div class="about-grid">
+
+        <div class="about-text">
+
+            <p>
+                I'm a developing digital content creator and video editor
+                focused on short-form promotional content, AI-assisted
+                creative production, product advertisements and visual
+                storytelling.
+            </p>
+
+            <p>
+                Alongside my creative work, I bring professional experience
+                in administrative support, digital document processing,
+                client communication, online research, records management
+                and organizational work.
+            </p>
+
+            <p>
+                This combination allows me to approach creative projects
+                with both imagination and organization—from developing
+                concepts and prompts to assembling visuals, text, music
+                and video into clear and engaging content.
+            </p>
+
+        </div>
+
+
+        <div class="quick-info">
+
+            <h3>Quick Info</h3>
+
+            <p>🎬 Focus: Video Editing & AI Content</p>
+
+            <p>💻 Also Available For: Virtual Assistance</p>
+
+            <p>📍 Remote / Philippines</p>
+
+            <p>📧 Digital Content & Administrative Support</p>
+
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+
+<!-- PORTFOLIO -->
+
+<section class="portfolio" id="portfolio">
+
+<div class="container">
+
+    <div class="section-label">
+        Selected Work
+    </div>
+
+    <h2 class="section-title">
+        Creative Portfolio
+    </h2>
+
+    <p class="section-description">
+        Selected video editing, AI-assisted content, promotional concepts
+        and product-focused creative work.
+    </p>
+
+
+    <div class="project-grid">
+
+
+        <!-- PROJECT 1 -->
+
+        <article class="project-card">
+
+            <div class="video-wrap">
+
+                <video controls preload="metadata" playsinline>
+
+                    <source
+                        src="Parent_preparing_milk_for_toddler_20260914171510.mp4"
+                        type="video/mp4"
+                    >
+
+                </video>
+
+            </div>
+
+
+            <div class="project-info">
+
+                <span class="project-category">
+                    AI Product Advertisement
+                </span>
+
+                <h3>
+                    Milk Product Promotional Video
+                </h3>
+
+                <p>
+                    AI-assisted short-form advertisement combining
+                    visual generation, product-focused storytelling,
+                    prompt development and video editing.
+                </p>
+
+
+                <div class="tags">
+
+                    <span class="tag">AI Video</span>
+
+                    <span class="tag">Google Flow</span>
+
+                    <span class="tag">Video Editing</span>
+
+                    <span class="tag">Product Advertising</span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- PROJECT 2 -->
+
+        <article class="project-card">
+
+            <div class="video-wrap">
+
+                <video controls preload="metadata" playsinline>
+
+                    <source
+                        src="202609142159.mp4"
+                        type="video/mp4"
+                    >
+
+                </video>
+
+            </div>
+
+
+            <div class="project-info">
+
+                <span class="project-category">
+                    AI Social Media Content
+                </span>
+
+                <h3>
+                    Social Media Product Advertisement
+                </h3>
+
+                <p>
+                    Short-form AI-assisted promotional video created
+                    as a social media advertising concept. The project
+                    demonstrates prompt engineering, AI video generation,
+                    visual storytelling and creative video editing.
+                </p>
+
+
+                <div class="tags">
+
+                    <span class="tag">AI Content Creation</span>
+
+                    <span class="tag">Social Media</span>
+
+                    <span class="tag">Reels / TikTok</span>
+
+                    <span class="tag">Prompt Engineering</span>
+
+                    <span class="tag">Google Flow</span>
+
+                </div>
+
+
+                <p class="disclaimer">
+                    Personal portfolio concept created to demonstrate
+                    AI-assisted content creation skills. It is not presented
+                    as an official campaign or endorsement by the featured brand.
+                </p>
+
+            </div>
+
+        </article>
 
 
     </div>
 
-  </div>
-
+</div>
 </section>
-
 
 
 <!-- SKILLS -->
 
-<section id="skills">
+<section class="skills" id="skills">
 
-  <div class="container">
+<div class="container">
 
-    <div class="section-title">
-      <p>Capabilities</p>
-      <h2>Skills & Tools</h2>
+    <div class="section-label">
+        My Toolkit
     </div>
 
+    <h2 class="section-title">
+        Tools & Skills
+    </h2>
 
-    <div class="skills-container">
 
-      <div class="skill">Virtual Assistance</div>
+    <div class="skills-list">
 
-      <div class="skill">Administrative Support</div>
+        <span class="skill">Video Editing</span>
 
-      <div class="skill">AI Content Creation</div>
+        <span class="skill">AI Video Tools</span>
 
-      <div class="skill">Prompt Engineering</div>
+        <span class="skill">AI Image Generation</span>
 
-      <div class="skill">Google Flow</div>
+        <span class="skill">Prompt Writing</span>
 
-      <div class="skill">ChatGPT</div>
+        <span class="skill">Google Flow</span>
 
-      <div class="skill">Video Editing</div>
+        <span class="skill">CapCut</span>
 
-      <div class="skill">Social Media Content</div>
+        <span class="skill">Canva</span>
 
-      <div class="skill">Reels / TikTok Content</div>
+        <span class="skill">ChatGPT</span>
 
-      <div class="skill">Creative Writing</div>
+        <span class="skill">Social Media Content</span>
 
-      <div class="skill">Research</div>
+        <span class="skill">Virtual Assistance</span>
 
-      <div class="skill">Document Management</div>
+        <span class="skill">Administrative Support</span>
+
+        <span class="skill">Microsoft Word</span>
+
+        <span class="skill">Microsoft Excel</span>
+
+        <span class="skill">PowerPoint</span>
+
+        <span class="skill">Online Research</span>
 
     </div>
 
-  </div>
-
+</div>
 </section>
-
 
 
 <!-- CONTACT -->
 
 <section id="contact">
 
-  <div class="container">
+<div class="container">
 
-    <div class="contact-box glass">
+    <div class="contact-card">
 
-      <h2>
-        Let's Work Together
-      </h2>
+        <div class="section-label">
+            Contact
+        </div>
 
-      <p>
-        I'm open to opportunities in Virtual Assistance, Administrative
-        Support, AI Content Creation, Social Media Content, and Digital
-        Content Creation.
-      </p>
+        <h2>
+            Let's Work Together
+        </h2>
 
-      <a
-        href="https://github.com/Leniel1988"
-        target="_blank"
-        class="btn primary-btn"
-      >
-        View My GitHub
-      </a>
+        <p>
+            Available for Virtual Assistance, Administrative Support,
+            AI Content Creation, short-form video projects and
+            social media content.
+        </p>
+
+        <a
+            href="https://github.com/Leniel1988"
+            target="_blank"
+            class="btn btn-primary"
+        >
+            View GitHub
+        </a>
 
     </div>
 
-  </div>
-
+</div>
 </section>
 
 
-
-<!-- FOOTER -->
-
 <footer>
 
-  © 2026 Leniel Bayoran • Virtual Assistant & AI Content Creator
+    © 2026 Leniel Bayoran • Virtual Assistant • AI Content Creator
 
 </footer>
-
 
 </body>
 </html>
