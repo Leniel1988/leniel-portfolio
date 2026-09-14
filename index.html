@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leniel Bayoran | Virtual Assistant & AI Content Creator</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #07111f;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 8%;
+      position: sticky;
+      top: 0;
+      background: rgba(7,17,31,.95);
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #4dd8ff;
+    }
+
+    nav a {
+      color: #d8e3ee;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #4dd8ff;
+    }
+
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      padding: 80px 8%;
+      background:
+        radial-gradient(circle at 80% 30%, #12395b 0%, transparent 35%),
+        #07111f;
+    }
+
+    .hero-content {
+      max-width: 750px;
+    }
+
+    .small-title {
+      color: #4dd8ff;
+      font-weight: bold;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: clamp(45px, 7vw, 85px);
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    h1 span {
+      color: #4dd8ff;
+    }
+
+    .hero h2 {
+      font-size: 24px;
+      color: #b8c9d9;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      color: #aab8c5;
+      font-size: 18px;
+      margin-bottom: 35px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 25px;
+      margin-right: 12px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      background: #4dd8ff;
+      color: #07111f;
+    }
+
+    .button.secondary {
+      background: transparent;
+      border: 1px solid #4dd8ff;
+      color: #4dd8ff;
+    }
+
+    section {
+      padding: 90px 8%;
+    }
+
+    .section-title {
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+
+    .section-intro {
+      color: #9eb0c0;
+      max-width: 700px;
+      margin-bottom: 45px;
+    }
+
+    .about {
+      background: #0b1726;
+    }
+
+    .about p {
+      max-width: 850px;
+      color: #b7c5d1;
+      font-size: 17px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: #101e2e;
+      border: 1px solid #20364b;
+      padding: 30px;
+      border-radius: 14px;
+      transition: .3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: #4dd8ff;
+    }
+
+    .card h3 {
+      color: #4dd8ff;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: #aab8c5;
+    }
+
+    .projects {
+      background: #0b1726;
+    }
+
+    .project-card {
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      background: linear-gradient(145deg, #14283b, #0b1726);
+    }
+
+    .tag {
+      font-size: 12px;
+      color: #4dd8ff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .tool {
+      padding: 10px 18px;
+      background: #101e2e;
+      border: 1px solid #20364b;
+      border-radius: 30px;
+      color: #c7d4df;
+    }
+
+    .contact {
+      text-align: center;
+      background: #0b1726;
+    }
+
+    .contact p {
+      color: #aab8c5;
+      margin: 15px auto 30px;
+      max-width: 600px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #73879a;
+      background: #07111f;
+      font-size: 14px;
+    }
+
+    @media (max-width: 700px) {
+      nav .links {
+        display: none;
+      }
+
+      .hero {
+        min-height: 75vh;
+      }
+
+      h1 {
+        font-size: 48px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">LENIEL<span>.</span></div>
+
+  <div class="links">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#projects">Portfolio</a>
+    <a href="#tools">Tools</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div class="small-title">
+      VIRTUAL ASSISTANT • AI CONTENT CREATOR
+    </div>
+
+    <h1>
+      Hi, I'm <span>Leniel Bayoran.</span>
+    </h1>
+
+    <h2>
+      Administrative Support + Creative AI Solutions
+    </h2>
+
+    <p>
+      I provide reliable administrative support while using modern
+      AI-powered tools to create engaging digital content, product
+      advertisements and short-form videos for businesses and brands.
+    </p>
+
+    <a class="button" href="#projects">
+      View My Work
+    </a>
+
+    <a class="button secondary" href="#contact">
+      Contact Me
+    </a>
+
+  </div>
+
+</section>
+
+
+<section class="about" id="about">
+
+  <h2 class="section-title">About Me</h2>
+
+  <p>
+    I am an administrative professional and aspiring Virtual Assistant
+    with experience in document processing, client communication,
+    records evaluation and digital workflows. I combine administrative
+    skills with AI-assisted content creation to help businesses stay
+    organized while producing professional and engaging digital content.
+  </p>
+
+</section>
+
+
+<section id="services">
+
+  <h2 class="section-title">What I Can Do</h2>
+
+  <p class="section-intro">
+    Administrative support combined with modern digital and AI-powered
+    creative services.
+  </p>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>Virtual Assistance</h3>
+      <p>
+        Organized and dependable remote support for everyday business
+        operations and administrative tasks.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Administrative Support</h3>
+      <p>
+        Document management, records processing, data organization,
+        email communication and client assistance.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>AI Content Creation</h3>
+      <p>
+        AI-assisted product advertisements, creative visuals,
+        promotional concepts and branded digital content.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Video Editing</h3>
+      <p>
+        Short-form promotional videos, AI video workflows and
+        social-media-ready commercial content.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="projects" id="projects">
+
+  <h2 class="section-title">Featured Work</h2>
+
+  <p class="section-intro">
+    Selected projects demonstrating my creative, administrative and
+    AI-assisted digital skills.
+  </p>
+
+  <div class="cards">
+
+    <div class="card project-card">
+      <div class="tag">AI PRODUCT ADVERTISEMENT</div>
+      <h3>Creatine Capsules Commercial</h3>
+      <p>
+        Short-form commercial concept created using AI-assisted
+        product visualization, cinematic prompting and video editing.
+      </p>
+    </div>
+
+    <div class="card project-card">
+      <div class="tag">AI VIDEO</div>
+      <h3>Product Advertising</h3>
+      <p>
+        AI-assisted promotional content designed to transform
+        product images into engaging commercial-style videos.
+      </p>
+    </div>
+
+    <div class="card project-card">
+      <div class="tag">CREATIVE CONTENT</div>
+      <h3>Social Media Content</h3>
+      <p>
+        Visual concepts and short-form content designed for
+        online marketing and social media campaigns.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section id="tools">
+
+  <h2 class="section-title">Tools & Skills</h2>
+
+  <p class="section-intro">
+    Digital tools I use for administrative work, content creation
+    and productivity.
+  </p>
+
+  <div class="tools">
+
+    <div class="tool">ChatGPT</div>
+    <div class="tool">Google Workspace</div>
+    <div class="tool">Microsoft Office</div>
+    <div class="tool">Canva</div>
+    <div class="tool">CapCut</div>
+    <div class="tool">Google Flow</div>
+    <div class="tool">AI Image Generation</div>
+    <div class="tool">AI Video Generation</div>
+    <div class="tool">Document Management</div>
+    <div class="tool">Data Entry</div>
+
+  </div>
+
+</section>
+
+
+<section class="contact" id="contact">
+
+  <h2 class="section-title">Let's Work Together</h2>
+
+  <p>
+    Looking for reliable administrative support or creative
+    AI-assisted content? I'd be happy to discuss how I can support
+    your business or project.
+  </p>
+
+  <a class="button" href="mailto:YOUR-EMAIL-HERE">
+    Contact Me
+  </a>
+
+</section>
+
+
+<footer>
+  © 2026 Leniel Bayoran • Virtual Assistant & AI Content Creator
+</footer>
+
+</body>
+</html>
