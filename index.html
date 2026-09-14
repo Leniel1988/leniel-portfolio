@@ -19,21 +19,15 @@
       --bg2: #071a29;
       --panel: #0b2234;
       --cyan: #39d5ff;
-      --cyan2: #22bfe9;
       --white: #ffffff;
-      --text: #d6e3eb;
       --muted: #9fb3c1;
-      --border: rgba(57, 213, 255, 0.22);
-    }
-
-    html {
-      scroll-padding-top: 82px;
+      --border: rgba(57, 213, 255, .22);
     }
 
     body {
       font-family: Arial, Helvetica, sans-serif;
       background: var(--bg);
-      color: var(--white);
+      color: white;
       line-height: 1.6;
       overflow-x: hidden;
     }
@@ -43,453 +37,146 @@
     }
 
     /* =========================
-       NAVIGATION
+       NAV
     ========================== */
 
     nav {
-      height: 82px;
+      height: 76px;
       padding: 0 5%;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
 
       position: sticky;
       top: 0;
       z-index: 1000;
 
-      background: rgba(4, 18, 30, 0.95);
-      backdrop-filter: blur(14px);
+      background: rgba(4,18,30,.96);
+      backdrop-filter: blur(12px);
 
       border-bottom: 1px solid rgba(255,255,255,.05);
     }
 
     .brand {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .logo {
-      font-size: 26px;
+      font-size: 25px;
       font-weight: 900;
       letter-spacing: 1px;
-      line-height: 1;
     }
 
-    .logo span {
+    .brand span {
       color: var(--cyan);
-    }
-
-    .brand-tagline {
-      margin-top: 5px;
-      font-size: 8px;
-      letter-spacing: 4px;
-      color: #7e95a5;
     }
 
     .nav-links {
       display: flex;
-      align-items: center;
       gap: 28px;
+      align-items: center;
     }
 
     .nav-links a {
       color: #e1e9ef;
       font-size: 14px;
-      transition: .25s;
     }
 
     .nav-links a:hover {
       color: var(--cyan);
     }
 
-    .nav-contact {
-      padding: 11px 18px;
+    .work-button {
+      padding: 10px 17px;
       border: 1px solid var(--cyan);
       border-radius: 8px;
-      color: white !important;
     }
 
     /* =========================
-       HERO
+       EXACT HERO IMAGE
     ========================== */
 
     .hero {
-      min-height: calc(100vh - 82px);
-
-      background:
-        radial-gradient(
-          circle at 72% 30%,
-          rgba(57,213,255,.13),
-          transparent 35%
-        ),
-        linear-gradient(
-          115deg,
-          #04131f 0%,
-          #071b2a 45%,
-          #0b2a3b 72%,
-          #071823 100%
-        );
-
+      position: relative;
+      width: 100%;
+      background: #04131f;
       overflow: hidden;
     }
 
-    .hero-main {
-      min-height: 610px;
-      padding: 58px 5% 20px;
-
-      display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      align-items: center;
-      gap: 45px;
-    }
-
-    .hero-copy {
-      max-width: 730px;
-    }
-
-    .hello {
-      color: var(--cyan);
-      font-size: 15px;
-      letter-spacing: 7px;
-      font-weight: 700;
-      margin-bottom: 15px;
-    }
-
-    .hero h1 {
-      font-size: clamp(58px, 6.4vw, 92px);
-      line-height: .92;
-      letter-spacing: -3px;
-      margin-bottom: 17px;
-    }
-
-    .first-name {
-      color: white;
-    }
-
-    .last-name {
-      color: var(--cyan);
-    }
-
-    .roles {
-      font-size: clamp(21px, 2vw, 29px);
-      color: #e2e9ee;
-      font-weight: 700;
-      margin-bottom: 22px;
-    }
-
-    .roles span {
-      color: var(--cyan);
-    }
-
-    .intro {
-      max-width: 690px;
-      font-size: 17px;
-      color: #c0ced8;
-      margin-bottom: 30px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-bottom: 26px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 24px;
-      border-radius: 8px;
-      font-weight: 800;
-      border: 1px solid var(--cyan);
-      transition: .25s;
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-    }
-
-    .btn-primary {
-      background: var(--cyan);
-      color: #03111b;
-    }
-
-    .btn-outline {
-      background: rgba(4,18,30,.65);
-      color: white;
-    }
-
-    .contact-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 24px;
-      align-items: center;
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      color: #dbe4ea;
-      font-size: 15px;
-    }
-
-    .contact-item a {
-      color: white;
-    }
-
-    .contact-icon {
-      color: var(--cyan);
-      font-size: 20px;
-    }
-
-    /* =========================
-       PORTRAIT
-    ========================== */
-
-    .hero-visual {
-      min-height: 550px;
-      position: relative;
-
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-    }
-
-    .hero-visual::before {
-      content: "";
-      position: absolute;
-
-      width: 510px;
-      height: 510px;
-
-      border-radius: 50%;
-      border: 2px solid rgba(57,213,255,.17);
-
-      top: 30px;
-      left: 50%;
-
-      transform: translateX(-50%);
-
-      box-shadow:
-        0 0 70px rgba(57,213,255,.07);
-    }
-
-    .portrait-wrap {
-      width: min(470px, 95%);
-      position: relative;
-      z-index: 4;
-    }
-
-    .portrait {
+    .hero-image {
       width: 100%;
-      height: 560px;
-
-      object-fit: cover;
-      object-position: 50% 14%;
-
-      border-radius: 26px 26px 8px 8px;
-
-      box-shadow:
-        0 30px 80px rgba(0,0,0,.38);
-
-      -webkit-mask-image:
-        linear-gradient(
-          to bottom,
-          black 0%,
-          black 78%,
-          transparent 100%
-        );
-
-      mask-image:
-        linear-gradient(
-          to bottom,
-          black 0%,
-          black 78%,
-          transparent 100%
-        );
-    }
-
-    .ideas {
-      position: absolute;
-      z-index: 6;
-
-      right: -28px;
-      top: 170px;
-
-      color: white;
-
-      font-family: Georgia, serif;
-      font-style: italic;
-      font-size: 31px;
-
-      line-height: 1.3;
-
-      transform: rotate(-7deg);
-      text-align: center;
-    }
-
-    .ideas span {
-      color: var(--cyan);
-    }
-
-    .right-quote {
-      position: absolute;
-      z-index: 6;
-
-      right: -20px;
-      bottom: 70px;
-
-      width: 190px;
-
-      color: #c2d0da;
-      font-size: 13px;
-    }
-
-    .right-quote::after {
-      content: "";
       display: block;
-
-      width: 45px;
-      height: 3px;
-
-      background: var(--cyan);
-
-      margin-top: 14px;
     }
 
-    /* =========================
-       SERVICES
-    ========================== */
+    /*
+      These invisible clickable areas sit on top
+      of the buttons already visible inside the image.
+    */
 
-    .services-strip {
-      width: 91%;
-      margin: -35px auto 0;
-
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-
-      position: relative;
+    .hero-hotspot {
+      position: absolute;
       z-index: 10;
-    }
-
-    .service-card {
-      min-height: 175px;
-      padding: 25px;
-
-      border-radius: 15px;
-      border: 1px solid var(--border);
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(11,42,61,.88),
-          rgba(5,25,40,.88)
-        );
-
-      backdrop-filter: blur(14px);
-
-      transition: .3s;
-    }
-
-    .service-card:hover {
-      transform: translateY(-7px);
-      border-color: var(--cyan);
-    }
-
-    .service-icon {
-      color: var(--cyan);
-      font-size: 27px;
-      margin-bottom: 12px;
-    }
-
-    .service-card h3 {
-      font-size: 20px;
-      margin-bottom: 8px;
-    }
-
-    .service-card p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .mini-line {
-      width: 45px;
-      height: 3px;
-      background: var(--cyan);
-      margin-top: 16px;
-    }
-
-    .scroll-down {
-      padding: 26px 0 27px;
-      text-align: center;
-
-      color: #91a8b6;
-      font-size: 11px;
-      letter-spacing: 3px;
-    }
-
-    .scroll-down span {
       display: block;
-      color: var(--cyan);
-      font-size: 23px;
     }
 
-    /* =========================
-       GENERAL SECTIONS
-    ========================== */
-
-    .section {
-      padding: 95px 6%;
+    .work-hotspot {
+      left: 4%;
+      top: 67%;
+      width: 20%;
+      height: 10%;
     }
 
-    .section-label {
-      color: var(--cyan);
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 4px;
-      margin-bottom: 12px;
+    .resume-hotspot {
+      left: 25%;
+      top: 67%;
+      width: 23%;
+      height: 10%;
     }
 
-    .section-title {
-      font-size: clamp(35px, 4vw, 49px);
-      line-height: 1.1;
-      margin-bottom: 20px;
-    }
-
-    .section-description {
-      max-width: 760px;
-      color: var(--muted);
-      font-size: 17px;
-      margin-bottom: 40px;
+    .email-hotspot {
+      left: 4%;
+      top: 80%;
+      width: 24%;
+      height: 8%;
     }
 
     /* =========================
        ABOUT
     ========================== */
 
-    .about {
-      background:
-        linear-gradient(
-          180deg,
-          #06131f,
-          #071a29
-        );
+    .section {
+      padding: 90px 6%;
+    }
 
-      border-top: 1px solid rgba(255,255,255,.05);
+    .about {
+      background: linear-gradient(
+        180deg,
+        #06131f,
+        #071a29
+      );
+    }
+
+    .section-label {
+      color: var(--cyan);
+      letter-spacing: 4px;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: clamp(34px, 4vw, 48px);
+      line-height: 1.1;
+      margin-bottom: 22px;
     }
 
     .about-grid {
       display: grid;
       grid-template-columns: 1.2fr .8fr;
-      gap: 65px;
+      gap: 60px;
     }
 
     .about-text p {
-      max-width: 790px;
       color: #bdcad3;
       font-size: 17px;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
+      max-width: 800px;
     }
 
     .about-text strong {
@@ -497,54 +184,24 @@
     }
 
     .quick-info {
-      padding: 34px;
-
-      border-radius: 18px;
+      background: #092238;
       border: 1px solid var(--border);
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(9,37,56,.90),
-          rgba(5,25,39,.92)
-        );
+      border-radius: 18px;
+      padding: 32px;
     }
 
     .quick-info h3 {
       color: var(--cyan);
+      margin-bottom: 20px;
       font-size: 22px;
-      margin-bottom: 25px;
     }
 
     .quick-row {
-      color: #c5d2db;
-      margin-bottom: 18px;
-    }
-
-    .quick-row strong {
-      color: white;
+      margin-bottom: 15px;
+      color: #c6d2db;
     }
 
     .quick-row a {
-      color: var(--cyan);
-    }
-
-    .about-quote {
-      margin-top: 28px;
-      padding-top: 25px;
-
-      border-top: 1px solid var(--border);
-
-      text-align: center;
-
-      font-family: Georgia, serif;
-      font-style: italic;
-
-      color: #dce5ea;
-      font-size: 25px;
-    }
-
-    .about-quote span {
       color: var(--cyan);
     }
 
@@ -556,130 +213,91 @@
       background: #071a29;
     }
 
+    .section-description {
+      color: var(--muted);
+      max-width: 760px;
+      margin-bottom: 38px;
+    }
+
     .featured-video {
       display: grid;
       grid-template-columns: 1.15fr .85fr;
-
       gap: 35px;
-
       align-items: center;
-
-      margin-bottom: 45px;
 
       padding: 28px;
 
+      border-radius: 20px;
       border: 1px solid var(--border);
 
-      border-radius: 20px;
-
-      background:
-        linear-gradient(
-          145deg,
-          #0c2a3e,
-          #071a28
-        );
+      background: linear-gradient(
+        145deg,
+        #0c2a3e,
+        #071a28
+      );
     }
 
     .video-frame {
-      border-radius: 16px;
       overflow: hidden;
-
+      border-radius: 16px;
       background: black;
-
-      box-shadow:
-        0 20px 55px rgba(0,0,0,.35);
-
-      border: 1px solid rgba(57,213,255,.16);
     }
 
     .video-frame video {
-      display: block;
-
       width: 100%;
+      display: block;
       max-height: 520px;
-
       background: black;
     }
 
-    .video-info .project-tag {
+    .project-tag {
       color: var(--cyan);
-
-      font-size: 12px;
-
       letter-spacing: 2px;
-
-      text-transform: uppercase;
-
-      margin-bottom: 10px;
+      font-size: 12px;
+      margin-bottom: 9px;
     }
 
     .video-info h3 {
-      font-size: 30px;
-
+      font-size: 29px;
       margin-bottom: 14px;
     }
 
     .video-info p {
       color: var(--muted);
-
-      margin-bottom: 20px;
-
-      font-size: 16px;
+      margin-bottom: 17px;
     }
 
-    .project-grid {
+    /* =========================
+       SERVICES
+    ========================== */
+
+    .services-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
     }
 
-    .project-card {
-      min-height: 290px;
-      padding: 28px;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-
-      border-radius: 17px;
-
+    .service-card {
+      background: #0a2234;
       border: 1px solid var(--border);
-
-      background:
-        radial-gradient(
-          circle at 80% 10%,
-          rgba(57,213,255,.18),
-          transparent 35%
-        ),
-        linear-gradient(
-          145deg,
-          #0e2b3f,
-          #081926
-        );
-
+      border-radius: 16px;
+      padding: 28px;
       transition: .3s;
     }
 
-    .project-card:hover {
-      transform: translateY(-7px);
+    .service-card:hover {
+      transform: translateY(-6px);
       border-color: var(--cyan);
     }
 
-    .project-tag {
-      color: var(--cyan);
-      font-size: 12px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 9px;
+    .service-card h3 {
+      color: white;
+      margin-bottom: 10px;
     }
 
-    .project-card h3 {
-      font-size: 23px;
-      margin-bottom: 9px;
-    }
-
-    .project-card p {
+    .service-card p {
       color: var(--muted);
+      font-size: 15px;
     }
 
     /* =========================
@@ -693,46 +311,11 @@
     }
 
     .tool {
-      padding: 11px 18px;
-
-      border-radius: 30px;
+      background: #0a2234;
       border: 1px solid var(--border);
-
-      background: var(--panel);
-
+      border-radius: 30px;
+      padding: 10px 17px;
       color: #dbe5eb;
-    }
-
-    /* =========================
-       EXPERIENCE
-    ========================== */
-
-    .experience {
-      background: #071a29;
-    }
-
-    .experience-box {
-      max-width: 920px;
-
-      padding-left: 28px;
-
-      border-left: 3px solid var(--cyan);
-    }
-
-    .experience-box h3 {
-      font-size: 24px;
-      margin-bottom: 6px;
-    }
-
-    .experience-role {
-      color: var(--cyan);
-      font-weight: bold;
-      margin-bottom: 16px;
-    }
-
-    .experience-box p {
-      color: var(--muted);
-      margin-bottom: 11px;
     }
 
     /* =========================
@@ -747,10 +330,9 @@
       max-width: 850px;
       margin: auto;
 
-      padding: 60px 32px;
+      padding: 55px 30px;
 
-      border-radius: 22px;
-
+      border-radius: 20px;
       border: 1px solid var(--border);
 
       background:
@@ -763,30 +345,33 @@
     }
 
     .contact-box p {
-      max-width: 620px;
-      margin: 0 auto 25px;
       color: var(--muted);
+      max-width: 620px;
+      margin: 0 auto 24px;
     }
 
-    .contact-email {
-      display: block;
-
+    .email {
       color: var(--cyan);
       font-size: 18px;
+      display: block;
+      margin-bottom: 24px;
+    }
 
-      margin-bottom: 25px;
+    .button {
+      display: inline-block;
+      padding: 13px 22px;
+
+      background: var(--cyan);
+      color: #03111b;
+
+      border-radius: 8px;
+      font-weight: bold;
     }
 
     footer {
       text-align: center;
-
-      padding: 30px;
-
+      padding: 28px;
       color: #738b9b;
-
-      border-top:
-        1px solid rgba(255,255,255,.05);
-
       font-size: 13px;
     }
 
@@ -794,95 +379,38 @@
        RESPONSIVE
     ========================== */
 
-    @media (max-width: 1100px) {
-      .services-strip {
-        grid-template-columns: repeat(2, 1fr);
+    @media (max-width: 1000px) {
+      .services-grid {
+        grid-template-columns: repeat(2,1fr);
       }
 
-      .project-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
+      .about-grid,
       .featured-video {
         grid-template-columns: 1fr;
       }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .ideas,
-      .right-quote {
-        display: none;
-      }
     }
 
-    @media (max-width: 800px) {
-      nav {
-        padding: 0 6%;
-      }
-
+    @media (max-width: 750px) {
       .nav-links {
         display: none;
       }
 
-      .hero-main {
+      .hero-image {
+        width: 160%;
+        max-width: none;
+        transform: translateX(-18%);
+      }
+
+      .hero-hotspot {
+        display: none;
+      }
+
+      .services-grid {
         grid-template-columns: 1fr;
-
-        padding: 55px 6% 0;
-      }
-
-      .hero-visual {
-        min-height: 450px;
-      }
-
-      .portrait-wrap {
-        width: 340px;
-      }
-
-      .portrait {
-        height: 450px;
-      }
-
-      .services-strip {
-        grid-template-columns: 1fr;
-        margin-top: 15px;
-      }
-
-      .project-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero h1 {
-        font-size: 55px;
       }
 
       .section {
-        padding: 75px 6%;
-      }
-    }
-
-    @media (max-width: 500px) {
-      .hero-buttons {
-        flex-direction: column;
-      }
-
-      .btn {
-        text-align: center;
-      }
-
-      .contact-row {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-      }
-
-      .portrait-wrap {
-        width: 285px;
-      }
-
-      .portrait {
-        height: 400px;
+        padding: 65px 6%;
       }
     }
   </style>
@@ -890,20 +418,12 @@
 
 <body>
 
-  <!-- NAV -->
+  <!-- NAVIGATION -->
 
   <nav>
 
     <div class="brand">
-
-      <div class="logo">
-        LENIEL<span>.</span>
-      </div>
-
-      <div class="brand-tagline">
-        CREATE • SUPPORT • DELIVER
-      </div>
-
+      LENIEL<span>.</span>
     </div>
 
     <div class="nav-links">
@@ -923,7 +443,7 @@
       <a href="#contact">Contact</a>
 
       <a
-        class="nav-contact"
+        class="work-button"
         href="mailto:lenielvilla02@gmail.com">
         ✉ Let's Work Together
       </a>
@@ -932,247 +452,41 @@
 
   </nav>
 
-  <!-- HERO -->
 
-  <main class="hero" id="home">
+  <!-- HERO USING THE GENERATED IMAGE -->
 
-    <div class="hero-main">
+  <section
+    class="hero"
+    id="home">
 
-      <div class="hero-copy">
+    <img
+      class="hero-image"
+      src="leniel-hero.png"
+      alt="Leniel Bayoran Portfolio">
 
-        <div class="hello">
-          HELLO, I'M
-        </div>
+    <!-- Clickable invisible overlays -->
 
-        <h1>
-          <span class="first-name">LENIEL</span>
-          <br>
-          <span class="last-name">BAYORAN</span>
-        </h1>
+    <a
+      class="hero-hotspot work-hotspot"
+      href="#portfolio"
+      aria-label="View My Work">
+    </a>
 
-        <div class="roles">
+    <a
+      class="hero-hotspot resume-hotspot"
+      href="Leniel_Bayoran_Digital_Content_Creator_Resume%20(1)%20(1).pdf"
+      target="_blank"
+      aria-label="View My Resume">
+    </a>
 
-          Video Editor
+    <a
+      class="hero-hotspot email-hotspot"
+      href="mailto:lenielvilla02@gmail.com"
+      aria-label="Email Leniel">
+    </a>
 
-          <span>•</span>
+  </section>
 
-          AI Content Creator
-
-          <span>•</span>
-
-          Virtual Assistant
-
-        </div>
-
-        <p class="intro">
-
-          I create engaging videos,
-          AI-assisted product advertisements,
-          and visual content that help brands
-          tell their stories.
-
-          I also provide reliable administrative
-          and virtual support to keep businesses
-          organized and efficient.
-
-        </p>
-
-        <div class="hero-buttons">
-
-          <a
-            class="btn btn-primary"
-            href="#portfolio">
-
-            ▶ View My Work
-
-          </a>
-
-          <a
-            class="btn btn-outline"
-            href="Leniel_Bayoran_Digital_Content_Creator_Resume%20(1)%20(1).pdf"
-            target="_blank">
-
-            ▣ View My Resume
-
-          </a>
-
-        </div>
-
-        <div class="contact-row">
-
-          <div class="contact-item">
-
-            <span class="contact-icon">
-              ✉
-            </span>
-
-            <a href="mailto:lenielvilla02@gmail.com">
-              lenielvilla02@gmail.com
-            </a>
-
-          </div>
-
-          <div class="contact-item">
-
-            <span class="contact-icon">
-              ●
-            </span>
-
-            Philippines
-
-          </div>
-
-        </div>
-
-      </div>
-
-      <div class="hero-visual">
-
-        <div class="portrait-wrap">
-
-          <img
-            class="portrait"
-            src="bayoran_leniel_JDC09137.jpg"
-            alt="Leniel Bayoran">
-
-        </div>
-
-        <div class="ideas">
-
-          Ideas
-          <br>
-          into
-          <br>
-
-          <span>
-            Impact
-          </span>
-
-        </div>
-
-        <div class="right-quote">
-
-          “Creative content
-          and organized support
-          for a more efficient tomorrow.”
-
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- SERVICES -->
-
-    <div
-      class="services-strip"
-      id="services">
-
-      <div class="service-card">
-
-        <div class="service-icon">
-          ▣
-        </div>
-
-        <h3>
-          Video Editing
-        </h3>
-
-        <p>
-
-          Short-form videos,
-          product advertisements,
-          social media content,
-          transitions and more.
-
-        </p>
-
-        <div class="mini-line"></div>
-
-      </div>
-
-      <div class="service-card">
-
-        <div class="service-icon">
-          ▧
-        </div>
-
-        <h3>
-          AI Content Creation
-        </h3>
-
-        <p>
-
-          AI-generated visuals,
-          promotional concepts,
-          creative prompts,
-          and marketing content.
-
-        </p>
-
-        <div class="mini-line"></div>
-
-      </div>
-
-      <div class="service-card">
-
-        <div class="service-icon">
-          ▱
-        </div>
-
-        <h3>
-          Virtual Assistance
-        </h3>
-
-        <p>
-
-          Reliable digital support,
-          online research,
-          organization,
-          and client communication.
-
-        </p>
-
-        <div class="mini-line"></div>
-
-      </div>
-
-      <div class="service-card">
-
-        <div class="service-icon">
-          ▤
-        </div>
-
-        <h3>
-          Administrative Support
-        </h3>
-
-        <p>
-
-          Document processing,
-          records management,
-          data entry,
-          and professional correspondence.
-
-        </p>
-
-        <div class="mini-line"></div>
-
-      </div>
-
-    </div>
-
-    <div class="scroll-down">
-
-      SCROLL DOWN
-
-      <span>
-        ⌄
-      </span>
-
-    </div>
-
-  </main>
 
   <!-- ABOUT -->
 
@@ -1189,111 +503,131 @@
         </div>
 
         <h2 class="section-title">
-
           Creativity backed by
-          <br>
           professional experience.
-
         </h2>
 
         <p>
-
-          I'm a developing digital content creator
-          and video editor focused on
-          short-form promotional content,
-          AI-assisted creative production,
-          product advertisements,
-          and visual storytelling.
-
+          I'm a developing digital content creator and video editor
+          focused on short-form promotional content, AI-assisted
+          creative production, product advertisements and visual
+          storytelling.
         </p>
 
         <p>
-
-          Alongside my creative work,
-          I bring substantial professional experience
-          in digital document processing,
-          client <strong>communication</strong>,
-          online research,
-          records management,
-          and administrative
+          Alongside my creative work, I bring substantial professional
+          experience in digital document processing,
+          client <strong>communication</strong>, online research,
+          records management and administrative
           <strong>operations</strong>.
-
         </p>
 
         <p>
-
-          This combination allows me
-          to approach creative projects
-          with both imagination and organization —
-          from developing concepts and prompts
-          to assembling visuals,
-          text,
-          music,
-          and video into clear
-          and engaging content.
-
+          This combination allows me to approach creative projects
+          with both imagination and organization — from developing
+          concepts and prompts to assembling visuals, text, music
+          and video into clear and engaging content.
         </p>
 
       </div>
 
-      <aside class="quick-info">
+
+      <div class="quick-info">
 
         <h3>
           Quick Info
         </h3>
 
         <div class="quick-row">
-
-          👤
-          <strong>Focus:</strong>
+          👤 <strong>Focus:</strong>
           Video Editing & AI Content
-
         </div>
 
         <div class="quick-row">
-
-          💼
-          <strong>Also Available For:</strong>
+          💼 <strong>Also Available For:</strong>
           Virtual Assistance
-
         </div>
 
         <div class="quick-row">
-
-          📍
-          <strong>Based in:</strong>
+          📍 <strong>Based in:</strong>
           Philippines
-
         </div>
 
         <div class="quick-row">
-
-          ✉
-          <strong>Email:</strong>
+          ✉ <strong>Email:</strong>
 
           <a href="mailto:lenielvilla02@gmail.com">
             lenielvilla02@gmail.com
           </a>
-
         </div>
 
-        <div class="about-quote">
-
-          Same Passion.
-          <br>
-
-          More
-          <span>
-            Possibilities.
-          </span>
-
-        </div>
-
-      </aside>
+      </div>
 
     </div>
 
   </section>
+
+
+  <!-- SERVICES -->
+
+  <section
+    class="section"
+    id="services">
+
+    <div class="section-label">
+      — WHAT I DO
+    </div>
+
+    <h2 class="section-title">
+      Creative & Digital Services
+    </h2>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <h3>🎬 Video Editing</h3>
+
+        <p>
+          Short-form videos, product ads,
+          social content, transitions,
+          music and visual storytelling.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <h3>✨ AI Content Creation</h3>
+
+        <p>
+          AI-generated visuals, promotional
+          concepts, scene development
+          and creative prompting.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <h3>💻 Virtual Assistance</h3>
+
+        <p>
+          Research, digital organization,
+          communication and dependable
+          remote business support.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <h3>📄 Administrative Support</h3>
+
+        <p>
+          Document processing, records,
+          correspondence, spreadsheets
+          and workflow support.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
 
   <!-- PORTFOLIO -->
 
@@ -1310,15 +644,10 @@
     </h2>
 
     <p class="section-description">
-
-      Selected video editing,
-      AI-assisted content,
-      promotional concepts,
-      and product-focused creative work.
-
+      Selected video editing, AI-assisted content,
+      promotional concepts and product-focused creative work.
     </p>
 
-    <!-- FEATURED VIDEO -->
 
     <div class="featured-video">
 
@@ -1339,6 +668,7 @@
 
       </div>
 
+
       <div class="video-info">
 
         <div class="project-tag">
@@ -1350,104 +680,23 @@
         </h3>
 
         <p>
-
-          AI-assisted short-form advertisement
-          featuring cinematic scene development,
-          product-focused storytelling,
-          visual prompting,
-          and video editing.
-
+          AI-assisted short-form advertisement featuring
+          cinematic scene development, product-focused storytelling,
+          visual prompting and video editing.
         </p>
 
         <p>
-
-          This portfolio project demonstrates
-          my growing experience in AI-assisted
-          advertising concepts,
-          visual sequencing,
-          promotional storytelling,
-          and short-form content creation.
-
+          This project demonstrates my developing experience
+          in AI-assisted advertising, visual sequencing
+          and short-form promotional content.
         </p>
 
       </div>
 
     </div>
 
-    <!-- OTHER PROJECTS -->
-
-    <div class="project-grid">
-
-      <article class="project-card">
-
-        <div class="project-tag">
-          Video Editing
-        </div>
-
-        <h3>
-          Short-Form Promotional Videos
-        </h3>
-
-        <p>
-
-          Product-focused short videos
-          combining visual sequences,
-          transitions,
-          text overlays,
-          music,
-          and engaging creative direction.
-
-        </p>
-
-      </article>
-
-      <article class="project-card">
-
-        <div class="project-tag">
-          AI Content Creation
-        </div>
-
-        <h3>
-          AI Product Advertisements
-        </h3>
-
-        <p>
-
-          AI-assisted commercial concepts,
-          scene development,
-          image generation,
-          prompt writing,
-          and visual storytelling.
-
-        </p>
-
-      </article>
-
-      <article class="project-card">
-
-        <div class="project-tag">
-          Creative Direction
-        </div>
-
-        <h3>
-          Product Content Concepts
-        </h3>
-
-        <p>
-
-          Promotional concepts developed
-          for beauty,
-          wellness,
-          lifestyle,
-          and consumer products.
-
-        </p>
-
-      </article>
-
-    </div>
-
   </section>
+
 
   <!-- TOOLS -->
 
@@ -1462,16 +711,6 @@
     <h2 class="section-title">
       Tools & Skills
     </h2>
-
-    <p class="section-description">
-
-      Digital,
-      creative,
-      and AI-assisted tools
-      I use for content creation
-      and professional support.
-
-    </p>
 
     <div class="tools">
 
@@ -1492,72 +731,6 @@
 
   </section>
 
-  <!-- EXPERIENCE -->
-
-  <section class="section experience">
-
-    <div class="section-label">
-
-      — PROFESSIONAL BACKGROUND
-
-    </div>
-
-    <h2 class="section-title">
-
-      Administrative Experience
-
-    </h2>
-
-    <p class="section-description">
-
-      My professional background
-      strengthens my creative work
-      with organization,
-      accuracy,
-      communication,
-      and attention to detail.
-
-    </p>
-
-    <div class="experience-box">
-
-      <h3>
-
-        Commission on Higher Education –
-        Regional Office XII
-
-      </h3>
-
-      <div class="experience-role">
-
-        Administrative Aide IV • Present
-
-      </div>
-
-      <p>
-
-        Experienced in government digital platforms,
-        electronic document processing,
-        records management,
-        client transactions,
-        online research,
-        and professional correspondence.
-
-      </p>
-
-      <p>
-
-        I manage multiple priorities
-        while maintaining accuracy,
-        confidentiality,
-        organization,
-        and service-oriented communication.
-
-      </p>
-
-    </div>
-
-  </section>
 
   <!-- CONTACT -->
 
@@ -1568,30 +741,21 @@
     <div class="contact-box">
 
       <div class="section-label">
-
         LET'S WORK TOGETHER
-
       </div>
 
       <h2 class="section-title">
-
         Have a project in mind?
-
       </h2>
 
       <p>
-
-        I'm open to opportunities involving
-        video editing,
-        AI-assisted content creation,
-        promotional content,
-        virtual assistance,
-        and digital support.
-
+        I'm open to opportunities involving video editing,
+        AI-assisted content creation, promotional content,
+        virtual assistance and digital support.
       </p>
 
       <a
-        class="contact-email"
+        class="email"
         href="mailto:lenielvilla02@gmail.com">
 
         ✉ lenielvilla02@gmail.com
@@ -1599,7 +763,7 @@
       </a>
 
       <a
-        class="btn btn-primary"
+        class="button"
         href="mailto:lenielvilla02@gmail.com">
 
         Send Me an Email
@@ -1610,7 +774,6 @@
 
   </section>
 
-  <!-- FOOTER -->
 
   <footer>
 
