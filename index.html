@@ -31,8 +31,6 @@
       line-height: 1.6;
     }
 
-    /* NAVIGATION */
-
     nav {
       min-height: 80px;
       display: flex;
@@ -74,8 +72,6 @@
       color: var(--cyan);
     }
 
-    /* HERO */
-
     .hero {
       min-height: calc(100vh - 80px);
       position: relative;
@@ -87,14 +83,15 @@
         linear-gradient(
           90deg,
           #06111f 0%,
-          rgba(6,17,31,.98) 42%,
-          rgba(6,17,31,.78) 66%,
-          rgba(6,17,31,.35) 100%
+          rgba(6,17,31,.98) 35%,
+          rgba(6,17,31,.82) 52%,
+          rgba(6,17,31,.42) 68%,
+          rgba(6,17,31,.10) 100%
         ),
         url("bayoran_leniel_JDC09137.jpg");
 
       background-size: cover;
-      background-position: 75% 25%;
+      background-position: 88% 22%;
     }
 
     .hero::after {
@@ -103,9 +100,9 @@
       inset: 0;
       background:
         radial-gradient(
-          circle at 70% 45%,
-          rgba(69,215,255,.12),
-          transparent 35%
+          circle at 78% 45%,
+          rgba(69,215,255,.10),
+          transparent 30%
         );
       pointer-events: none;
     }
@@ -177,8 +174,6 @@
       color: var(--cyan);
     }
 
-    /* GENERAL */
-
     section {
       padding: 90px 8%;
     }
@@ -203,8 +198,6 @@
       margin-bottom: 45px;
       font-size: 17px;
     }
-
-    /* ABOUT */
 
     .about {
       background: var(--dark2);
@@ -245,8 +238,6 @@
       text-decoration: none;
     }
 
-    /* SERVICES */
-
     .cards {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -282,8 +273,6 @@
       color: var(--muted);
       font-size: 15px;
     }
-
-    /* PORTFOLIO */
 
     .portfolio {
       background: var(--dark2);
@@ -334,8 +323,6 @@
       color: var(--muted);
     }
 
-    /* TOOLS */
-
     .tools-list {
       display: flex;
       flex-wrap: wrap;
@@ -349,8 +336,6 @@
       border-radius: 30px;
       color: #d2dee7;
     }
-
-    /* EXPERIENCE */
 
     .experience {
       background: var(--dark2);
@@ -377,8 +362,6 @@
       color: var(--muted);
       margin-bottom: 10px;
     }
-
-    /* CONTACT */
 
     .contact {
       text-align: center;
@@ -419,8 +402,6 @@
       border-top: 1px solid rgba(255,255,255,.05);
     }
 
-    /* MOBILE */
-
     @media (max-width: 1000px) {
       .cards {
         grid-template-columns: repeat(2, 1fr);
@@ -454,12 +435,12 @@
             0deg,
             #06111f 8%,
             rgba(6,17,31,.88) 48%,
-            rgba(6,17,31,.35) 100%
+            rgba(6,17,31,.32) 100%
           ),
           url("bayoran_leniel_JDC09137.jpg");
 
         background-size: cover;
-        background-position: center top;
+        background-position: 60% top;
       }
 
       h1 {
@@ -484,8 +465,6 @@
 
 <body>
 
-  <!-- NAVIGATION -->
-
   <nav>
     <div class="logo">LENIEL<span>.</span></div>
 
@@ -498,9 +477,6 @@
       <a href="#contact">Contact</a>
     </div>
   </nav>
-
-
-  <!-- HERO -->
 
   <section class="hero">
 
@@ -548,9 +524,6 @@
     </div>
 
   </section>
-
-
-  <!-- ABOUT -->
 
   <section class="about" id="about">
 
@@ -610,9 +583,6 @@
 
   </section>
 
-
-  <!-- SERVICES -->
-
   <section id="services">
 
     <div class="section-label">What I Do</div>
@@ -667,9 +637,6 @@
 
   </section>
 
-
-  <!-- PORTFOLIO -->
-
   <section class="portfolio" id="portfolio">
 
     <div class="section-label">Selected Work</div>
@@ -714,9 +681,6 @@
 
   </section>
 
-
-  <!-- TOOLS -->
-
   <section id="tools">
 
     <div class="section-label">My Toolkit</div>
@@ -746,9 +710,6 @@
     </div>
 
   </section>
-
-
-  <!-- PROFESSIONAL EXPERIENCE -->
 
   <section class="experience" id="experience">
 
@@ -789,9 +750,6 @@
 
   </section>
 
-
-  <!-- CONTACT -->
-
   <section class="contact" id="contact">
 
     <div class="contact-box">
@@ -825,9 +783,6 @@
     </div>
 
   </section>
-
-
-  <!-- FOOTER -->
 
   <footer>
     © 2026 Leniel Bayoran • Video Editor • AI Content Creator • Virtual Assistant
