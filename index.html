@@ -7,6 +7,11 @@
 <title>Leniel Bayoran | Virtual Assistant & AI Content Creator</title>
 
 <style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
 *{
     margin:0;
     padding:0;
@@ -14,11 +19,23 @@
     scroll-behavior:smooth;
 }
 
+:root{
+    --bg:#031725;
+    --bg2:#041b2b;
+    --card:#052031;
+    --cyan:#27d3ff;
+    --cyan2:#77e7ff;
+    --text:#ffffff;
+    --muted:#94a9b7;
+    --border:rgba(39,211,255,.18);
+}
+
 body{
     font-family:Arial, Helvetica, sans-serif;
-    background:#031725;
-    color:#ffffff;
+    background:var(--bg);
+    color:var(--text);
     line-height:1.6;
+    overflow-x:hidden;
 }
 
 a{
@@ -32,14 +49,17 @@ a{
     margin:auto;
 }
 
-/* NAVIGATION */
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
 
 nav{
     position:sticky;
     top:0;
     z-index:999;
-    background:rgba(2,18,30,.92);
-    backdrop-filter:blur(15px);
+    background:rgba(2,18,30,.90);
+    backdrop-filter:blur(18px);
     border-bottom:1px solid rgba(66,211,255,.12);
 }
 
@@ -53,13 +73,13 @@ nav{
 }
 
 .logo{
-    font-weight:800;
+    font-weight:900;
     letter-spacing:2px;
     font-size:20px;
 }
 
 .logo span{
-    color:#27d3ff;
+    color:var(--cyan);
 }
 
 nav ul{
@@ -72,31 +92,49 @@ nav ul li a{
     font-size:13px;
     color:#c9d7e1;
     transition:.25s;
+    position:relative;
 }
 
 nav ul li a:hover{
-    color:#27d3ff;
+    color:var(--cyan);
 }
 
-/* HERO */
+
+/* =========================================================
+   HERO
+========================================================= */
 
 .hero{
-    min-height:88vh;
+    min-height:90vh;
     display:grid;
     grid-template-columns:1.05fr .95fr;
     align-items:center;
     max-width:1200px;
     margin:auto;
     padding:70px 5%;
-    gap:40px;
+    gap:50px;
+    position:relative;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    width:450px;
+    height:450px;
+    background:rgba(39,211,255,.07);
+    filter:blur(120px);
+    left:-200px;
+    top:80px;
+    pointer-events:none;
 }
 
 .kicker{
-    color:#27d3ff;
+    color:var(--cyan);
     font-size:12px;
     text-transform:uppercase;
     letter-spacing:3px;
     margin-bottom:15px;
+    font-weight:700;
 }
 
 .hero h1{
@@ -106,11 +144,11 @@ nav ul li a:hover{
 }
 
 .hero h1 span{
-    color:#27d3ff;
+    color:var(--cyan);
 }
 
 .hero h2{
-    color:#c7d5de;
+    color:#d0dde5;
     font-size:21px;
     font-weight:500;
     margin-bottom:20px;
@@ -130,22 +168,42 @@ nav ul li a:hover{
 }
 
 .btn{
-    padding:12px 20px;
-    border-radius:7px;
+    padding:13px 22px;
+    border-radius:8px;
     font-size:13px;
     font-weight:700;
-    display:inline-block;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    transition:.3s;
 }
 
 .btn-primary{
-    background:#24c9ef;
+    background:linear-gradient(135deg,#24c9ef,#70e6ff);
     color:#02131f;
+    box-shadow:0 8px 30px rgba(39,211,255,.20);
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 35px rgba(39,211,255,.35);
 }
 
 .btn-outline{
-    border:1px solid #24c9ef;
-    color:#24c9ef;
+    border:1px solid var(--cyan);
+    color:var(--cyan);
+    background:rgba(39,211,255,.03);
 }
+
+.btn-outline:hover{
+    background:var(--cyan);
+    color:#02131f;
+    transform:translateY(-3px);
+}
+
+
+/* HERO PHOTO */
 
 .hero-photo{
     display:flex;
@@ -157,12 +215,21 @@ nav ul li a:hover{
 .hero-photo::before{
     content:"";
     position:absolute;
-    width:350px;
-    height:350px;
+    width:370px;
+    height:370px;
     border-radius:50%;
     background:#0a526c;
     filter:blur(80px);
-    opacity:.35;
+    opacity:.40;
+}
+
+.hero-photo::after{
+    content:"";
+    position:absolute;
+    width:330px;
+    height:330px;
+    border:1px solid rgba(39,211,255,.20);
+    border-radius:50%;
 }
 
 .hero-photo img{
@@ -173,14 +240,17 @@ nav ul li a:hover{
     filter:drop-shadow(0 20px 25px rgba(0,0,0,.45));
 }
 
-/* SECTION */
+
+/* =========================================================
+   GENERAL SECTIONS
+========================================================= */
 
 section{
-    padding:85px 0;
+    padding:90px 0;
 }
 
 .section-label{
-    color:#25d3ff;
+    color:var(--cyan);
     letter-spacing:3px;
     font-size:11px;
     text-transform:uppercase;
@@ -189,17 +259,108 @@ section{
 }
 
 .section-title{
-    font-size:32px;
+    font-size:34px;
     margin-bottom:12px;
 }
 
 .section-description{
     color:#8fa4b3;
     max-width:720px;
-    margin-bottom:38px;
+    margin-bottom:40px;
 }
 
-/* ABOUT */
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+#services{
+    background:
+    radial-gradient(circle at 50% 0%,rgba(39,211,255,.07),transparent 35%),
+    #031725;
+}
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
+    margin-top:35px;
+}
+
+.service{
+    position:relative;
+    background:linear-gradient(
+        145deg,
+        rgba(7,39,58,.95),
+        rgba(4,28,43,.95)
+    );
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:32px;
+    transition:.35s;
+    overflow:hidden;
+}
+
+.service::before{
+    content:"";
+    position:absolute;
+    width:130px;
+    height:130px;
+    border-radius:50%;
+    background:rgba(39,211,255,.08);
+    filter:blur(40px);
+    right:-40px;
+    top:-40px;
+}
+
+.service:hover{
+    transform:translateY(-8px);
+    border-color:rgba(39,211,255,.65);
+    box-shadow:0 20px 45px rgba(0,0,0,.28);
+}
+
+.service-icon{
+    width:54px;
+    height:54px;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(39,211,255,.09);
+    border:1px solid rgba(39,211,255,.22);
+    font-size:25px;
+    margin-bottom:20px;
+}
+
+.service h3{
+    font-size:19px;
+    margin-bottom:10px;
+}
+
+.service p{
+    font-size:13px;
+    color:#91a8b6;
+    max-width:480px;
+}
+
+.service-link{
+    display:inline-block;
+    margin-top:20px;
+    color:var(--cyan);
+    font-size:12px;
+    font-weight:700;
+    transition:.25s;
+}
+
+.service-link:hover{
+    transform:translateX(5px);
+    color:#ffffff;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
 
 .about{
     background:#041b2b;
@@ -217,60 +378,32 @@ section{
 }
 
 .quick-info{
-    border:1px solid #0c5670;
-    padding:28px;
-    border-radius:10px;
-    background:#052031;
+    border:1px solid var(--border);
+    padding:30px;
+    border-radius:14px;
+    background:linear-gradient(
+        145deg,
+        #052031,
+        #041b2a
+    );
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
 }
 
 .quick-info h3{
     margin-bottom:18px;
+    color:#ffffff;
 }
 
 .quick-info p{
-    margin:11px 0;
+    margin:13px 0;
     color:#a9bbc7;
     font-size:14px;
 }
 
-/* SERVICES */
 
-.services-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:18px;
-    margin-top:30px;
-}
-
-.service{
-    background:#052031;
-    border:1px solid #0a5570;
-    border-radius:9px;
-    padding:25px;
-    transition:.25s;
-}
-
-.service:hover{
-    transform:translateY(-6px);
-    border-color:#26d4ff;
-}
-
-.service-icon{
-    font-size:24px;
-    margin-bottom:15px;
-}
-
-.service h3{
-    font-size:16px;
-    margin-bottom:10px;
-}
-
-.service p{
-    font-size:13px;
-    color:#8fa4b3;
-}
-
-/* PORTFOLIO */
+/* =========================================================
+   PORTFOLIO
+========================================================= */
 
 .portfolio{
     background:#031725;
@@ -283,16 +416,35 @@ section{
 }
 
 .project-card{
-    background:#052031;
-    border:1px solid #0b5670;
-    border-radius:12px;
+    background:linear-gradient(145deg,#052031,#041b2b);
+    border:1px solid var(--border);
+    border-radius:16px;
     overflow:hidden;
-    transition:.25s;
+    transition:.35s;
+    position:relative;
 }
 
 .project-card:hover{
-    transform:translateY(-5px);
-    border-color:#25d3ff;
+    transform:translateY(-7px);
+    border-color:rgba(39,211,255,.65);
+    box-shadow:0 20px 45px rgba(0,0,0,.30);
+}
+
+.featured-badge{
+    position:absolute;
+    top:16px;
+    left:16px;
+    z-index:10;
+    background:rgba(2,19,31,.90);
+    color:var(--cyan);
+    border:1px solid rgba(39,211,255,.35);
+    padding:6px 10px;
+    border-radius:20px;
+    font-size:9px;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    font-weight:700;
+    backdrop-filter:blur(10px);
 }
 
 .video-wrap{
@@ -306,15 +458,15 @@ section{
     aspect-ratio:16/9;
     object-fit:contain;
     background:#000;
-    border-radius:6px;
+    border-radius:8px;
 }
 
 .project-info{
-    padding:24px;
+    padding:25px;
 }
 
 .project-category{
-    color:#25d3ff;
+    color:var(--cyan);
     font-size:10px;
     text-transform:uppercase;
     letter-spacing:2px;
@@ -322,7 +474,7 @@ section{
 }
 
 .project-info h3{
-    font-size:20px;
+    font-size:21px;
     margin:8px 0 10px;
 }
 
@@ -344,6 +496,7 @@ section{
     border:1px solid #14617a;
     color:#bdeffc;
     font-size:10px;
+    background:rgba(39,211,255,.03);
 }
 
 .disclaimer{
@@ -352,7 +505,10 @@ section{
     margin-top:16px;
 }
 
-/* SKILLS */
+
+/* =========================================================
+   SKILLS
+========================================================= */
 
 .skills{
     background:#041b2b;
@@ -367,43 +523,79 @@ section{
 .skill{
     border:1px solid #0e617b;
     border-radius:30px;
-    padding:8px 14px;
+    padding:9px 15px;
     color:#b8eefa;
     font-size:11px;
     background:#052233;
+    transition:.25s;
 }
 
-/* CONTACT */
+.skill:hover{
+    border-color:var(--cyan);
+    transform:translateY(-3px);
+    background:rgba(39,211,255,.08);
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
 
 .contact-card{
-    border:1px solid #0b5670;
-    background:#052031;
-    padding:45px;
-    border-radius:12px;
+    position:relative;
+    overflow:hidden;
+    border:1px solid rgba(39,211,255,.28);
+    background:
+    linear-gradient(145deg,#052437,#041b2b);
+    padding:60px 40px;
+    border-radius:18px;
     text-align:center;
+    box-shadow:0 20px 50px rgba(0,0,0,.20);
+}
+
+.contact-card::before{
+    content:"";
+    position:absolute;
+    width:300px;
+    height:300px;
+    background:rgba(39,211,255,.08);
+    border-radius:50%;
+    filter:blur(80px);
+    top:-170px;
+    left:50%;
+    transform:translateX(-50%);
 }
 
 .contact-card h2{
-    font-size:32px;
+    font-size:35px;
     margin-bottom:10px;
+    position:relative;
 }
 
 .contact-card p{
     color:#94a9b7;
-    margin-bottom:25px;
+    margin:0 auto 27px;
+    max-width:650px;
+    position:relative;
 }
 
-/* FOOTER */
+
+/* =========================================================
+   FOOTER
+========================================================= */
 
 footer{
     border-top:1px solid rgba(39,211,255,.1);
-    padding:25px;
+    padding:27px;
     text-align:center;
     color:#6e8797;
     font-size:11px;
 }
 
-/* MOBILE */
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
 
 @media(max-width:900px){
 
@@ -428,12 +620,22 @@ footer{
         max-width:300px;
     }
 
+    .hero-photo::before{
+        width:270px;
+        height:270px;
+    }
+
+    .hero-photo::after{
+        width:250px;
+        height:250px;
+    }
+
     .about-grid{
         grid-template-columns:1fr;
     }
 
     .services-grid{
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns:1fr;
     }
 
     .project-grid{
@@ -441,32 +643,54 @@ footer{
     }
 }
 
+
 @media(max-width:650px){
 
     nav ul{
         display:none;
     }
 
-    .services-grid{
-        grid-template-columns:1fr;
-    }
-
     section{
         padding:65px 0;
+    }
+
+    .hero{
+        min-height:auto;
+        padding-top:50px;
+        padding-bottom:70px;
     }
 
     .hero h1{
         font-size:45px;
     }
+
+    .section-title{
+        font-size:29px;
+    }
+
+    .service{
+        padding:25px;
+    }
+
+    .contact-card{
+        padding:45px 22px;
+    }
+
 }
+
 </style>
 </head>
 
+
 <body>
 
-<!-- NAVIGATION -->
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
 
 <nav>
+
     <div class="nav-inner">
 
         <div class="logo">
@@ -483,10 +707,13 @@ footer{
         </ul>
 
     </div>
+
 </nav>
 
 
-<!-- HERO -->
+<!-- =====================================================
+     HERO
+===================================================== -->
 
 <section class="hero" id="home">
 
@@ -513,11 +740,11 @@ footer{
         <div class="buttons">
 
             <a href="#portfolio" class="btn btn-primary">
-                View Selected Work
+                ▶ View My Work
             </a>
 
             <a href="#contact" class="btn btn-outline">
-                Let's Work Together
+                Let's Work Together →
             </a>
 
         </div>
@@ -537,14 +764,16 @@ footer{
 </section>
 
 
-<!-- SERVICES -->
+<!-- =====================================================
+     SERVICES
+===================================================== -->
 
 <section id="services">
 
 <div class="container">
 
     <div class="section-label">
-        What I Do
+        What I Can Do For You
     </div>
 
     <h2 class="section-title">
@@ -552,26 +781,38 @@ footer{
     </h2>
 
     <p class="section-description">
-        A combination of administrative experience and modern digital
-        content creation.
+        Combining professional administrative experience with
+        modern AI-assisted creative production to help businesses
+        stay organized, communicate effectively and create engaging
+        digital content.
     </p>
 
 
     <div class="services-grid">
 
+
+        <!-- SERVICE 1 -->
+
         <div class="service">
 
             <div class="service-icon">🎬</div>
 
-            <h3>Video Editing</h3>
+            <h3>Video Editing & Short-Form Ads</h3>
 
             <p>
-                Short-form video, product advertisements,
-                social media content and promotional editing.
+                Engaging short-form promotional videos, product
+                advertisements, Reels, TikTok concepts and social
+                media content designed for modern digital audiences.
             </p>
+
+            <a href="#portfolio" class="service-link">
+                View Video Projects →
+            </a>
 
         </div>
 
+
+        <!-- SERVICE 2 -->
 
         <div class="service">
 
@@ -580,12 +821,19 @@ footer{
             <h3>AI Content Creation</h3>
 
             <p>
-                AI-generated visuals, promotional concepts,
-                creative prompting and marketing content.
+                AI-assisted visuals, realistic video concepts,
+                product advertising scenes, creative prompting,
+                storytelling and promotional content development.
             </p>
+
+            <a href="#portfolio" class="service-link">
+                Explore Creative Work →
+            </a>
 
         </div>
 
+
+        <!-- SERVICE 3 -->
 
         <div class="service">
 
@@ -594,12 +842,19 @@ footer{
             <h3>Virtual Assistance</h3>
 
             <p>
-                Reliable digital support, online research,
-                organization and client communication.
+                Dependable remote support including online research,
+                data organization, client communication, document
+                handling and day-to-day digital assistance.
             </p>
+
+            <a href="#contact" class="service-link">
+                Work With Me →
+            </a>
 
         </div>
 
+
+        <!-- SERVICE 4 -->
 
         <div class="service">
 
@@ -608,19 +863,28 @@ footer{
             <h3>Administrative Support</h3>
 
             <p>
-                Document preparation, records management,
-                data entry and correspondence.
+                Professional document preparation, records management,
+                data entry, correspondence, file organization and
+                administrative workflow support.
             </p>
 
+            <a href="#contact" class="service-link">
+                Get Administrative Support →
+            </a>
+
         </div>
+
 
     </div>
 
 </div>
+
 </section>
 
 
-<!-- ABOUT -->
+<!-- =====================================================
+     ABOUT
+===================================================== -->
 
 <section class="about" id="about">
 
@@ -669,21 +933,26 @@ footer{
 
             <p>🎬 Focus: Video Editing & AI Content</p>
 
-            <p>💻 Also Available For: Virtual Assistance</p>
+            <p>✨ AI-Assisted Creative Production</p>
+
+            <p>💻 Virtual Assistance</p>
+
+            <p>📄 Administrative Support</p>
 
             <p>📍 Remote / Philippines</p>
-
-            <p>📧 Digital Content & Administrative Support</p>
 
         </div>
 
     </div>
 
 </div>
+
 </section>
 
 
-<!-- PORTFOLIO -->
+<!-- =====================================================
+     PORTFOLIO
+===================================================== -->
 
 <section class="portfolio" id="portfolio">
 
@@ -698,17 +967,23 @@ footer{
     </h2>
 
     <p class="section-description">
-        Selected video editing, AI-assisted content, promotional concepts
-        and product-focused creative work.
+        A selection of AI-assisted commercials, promotional videos,
+        social media concepts and product-focused creative work.
     </p>
 
 
     <div class="project-grid">
 
 
-        <!-- PROJECT 1 -->
+        <!-- =================================================
+             PROJECT 1
+        ================================================== -->
 
         <article class="project-card">
+
+            <span class="featured-badge">
+                Featured Project
+            </span>
 
             <div class="video-wrap">
 
@@ -718,6 +993,8 @@ footer{
                         src="Parent_preparing_milk_for_toddler_20260914171510.mp4"
                         type="video/mp4"
                     >
+
+                    Your browser does not support HTML video.
 
                 </video>
 
@@ -744,11 +1021,8 @@ footer{
                 <div class="tags">
 
                     <span class="tag">AI Video</span>
-
                     <span class="tag">Google Flow</span>
-
                     <span class="tag">Video Editing</span>
-
                     <span class="tag">Product Advertising</span>
 
                 </div>
@@ -758,9 +1032,15 @@ footer{
         </article>
 
 
-        <!-- PROJECT 2 -->
+        <!-- =================================================
+             PROJECT 2
+        ================================================== -->
 
         <article class="project-card">
+
+            <span class="featured-badge">
+                Social Media
+            </span>
 
             <div class="video-wrap">
 
@@ -770,6 +1050,8 @@ footer{
                         src="202609142159.mp4"
                         type="video/mp4"
                     >
+
+                    Your browser does not support HTML video.
 
                 </video>
 
@@ -797,13 +1079,9 @@ footer{
                 <div class="tags">
 
                     <span class="tag">AI Content Creation</span>
-
                     <span class="tag">Social Media</span>
-
                     <span class="tag">Reels / TikTok</span>
-
                     <span class="tag">Prompt Engineering</span>
-
                     <span class="tag">Google Flow</span>
 
                 </div>
@@ -820,13 +1098,118 @@ footer{
         </article>
 
 
+        <!-- =================================================
+             PROJECT 3 - NEW ELECTRONICS COMMERCIAL
+        ================================================== -->
+
+        <article class="project-card">
+
+            <span class="featured-badge">
+                New Project
+            </span>
+
+            <div class="video-wrap">
+
+                <video controls preload="metadata" playsinline>
+
+                    <source
+                        src="Electronics_store_commercial_video_1080p_20260915.mp4"
+                        type="video/mp4"
+                    >
+
+                    Your browser does not support HTML video.
+
+                </video>
+
+            </div>
+
+
+            <div class="project-info">
+
+                <span class="project-category">
+                    AI Commercial • Video Editing
+                </span>
+
+                <h3>
+                    Electronics Store Commercial
+                </h3>
+
+                <p>
+                    Cinematic short-form commercial created as a digital
+                    advertising concept for an electronics retail brand.
+                    The project combines AI-assisted visual production,
+                    promotional storytelling, realistic scene generation
+                    and professional video editing.
+                </p>
+
+
+                <div class="tags">
+
+                    <span class="tag">AI Video</span>
+                    <span class="tag">Commercial</span>
+                    <span class="tag">Video Editing</span>
+                    <span class="tag">Google Flow</span>
+                    <span class="tag">Prompt Engineering</span>
+
+                </div>
+
+
+                <p class="disclaimer">
+                    Personal portfolio concept created to demonstrate
+                    AI-assisted advertising and video production skills.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- =================================================
+             MORE WORK CARD
+        ================================================== -->
+
+        <article class="project-card">
+
+            <div class="project-info" style="min-height:100%; display:flex; flex-direction:column; justify-content:center;">
+
+                <span class="project-category">
+                    More Creative Work
+                </span>
+
+                <h3>
+                    More Projects Coming Soon
+                </h3>
+
+                <p>
+                    I'm continuously developing new AI-assisted
+                    advertisements, promotional videos, social media
+                    concepts and digital content for my portfolio.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">AI Content</span>
+                    <span class="tag">Video Editing</span>
+                    <span class="tag">Advertising</span>
+                    <span class="tag">Creative Production</span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
     </div>
 
 </div>
+
 </section>
 
 
-<!-- SKILLS -->
+<!-- =====================================================
+     SKILLS
+===================================================== -->
 
 <section class="skills" id="skills">
 
@@ -840,6 +1223,11 @@ footer{
         Tools & Skills
     </h2>
 
+    <p class="section-description">
+        Creative, administrative and digital tools I use to support
+        content production and professional workflows.
+    </p>
+
 
     <div class="skills-list">
 
@@ -849,7 +1237,7 @@ footer{
 
         <span class="skill">AI Image Generation</span>
 
-        <span class="skill">Prompt Writing</span>
+        <span class="skill">Prompt Engineering</span>
 
         <span class="skill">Google Flow</span>
 
@@ -861,9 +1249,13 @@ footer{
 
         <span class="skill">Social Media Content</span>
 
+        <span class="skill">Product Advertising</span>
+
         <span class="skill">Virtual Assistance</span>
 
         <span class="skill">Administrative Support</span>
+
+        <span class="skill">Document Management</span>
 
         <span class="skill">Microsoft Word</span>
 
@@ -873,13 +1265,18 @@ footer{
 
         <span class="skill">Online Research</span>
 
+        <span class="skill">Client Communication</span>
+
     </div>
 
 </div>
+
 </section>
 
 
-<!-- CONTACT -->
+<!-- =====================================================
+     CONTACT
+===================================================== -->
 
 <section id="contact">
 
@@ -888,38 +1285,57 @@ footer{
     <div class="contact-card">
 
         <div class="section-label">
-            Contact
+            Let's Connect
         </div>
 
         <h2>
-            Let's Work Together
+            Have a Project in Mind?
         </h2>
 
         <p>
-            Available for Virtual Assistance, Administrative Support,
-            AI Content Creation, short-form video projects and
-            social media content.
+            I'm available for Virtual Assistance, Administrative Support,
+            AI Content Creation, short-form promotional videos,
+            product advertising concepts and social media content.
         </p>
 
-        <a
-            href="https://github.com/Leniel1988"
-            target="_blank"
-            class="btn btn-primary"
-        >
-            View GitHub
-        </a>
+
+        <div class="buttons" style="justify-content:center;">
+
+            <a
+                href="https://github.com/Leniel1988"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary"
+            >
+                View My GitHub →
+            </a>
+
+            <a
+                href="#portfolio"
+                class="btn btn-outline"
+            >
+                View My Projects
+            </a>
+
+        </div>
 
     </div>
 
 </div>
+
 </section>
 
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
     © 2026 Leniel Bayoran • Virtual Assistant • AI Content Creator
 
 </footer>
+
 
 </body>
 </html>
