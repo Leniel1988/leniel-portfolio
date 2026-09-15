@@ -26,15 +26,15 @@
     --card:#061d2b;
     --card2:#082536;
     --cyan:#22d3ee;
-    --cyan2:#00a8ff;
-    --blue:#3578ff;
+    --cyan2:#00b8f5;
+    --blue:#3b82f6;
     --white:#f5fbff;
     --muted:#94aebe;
     --border:rgba(34,211,238,.22);
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
     background:var(--bg);
     color:var(--white);
     line-height:1.6;
@@ -65,16 +65,16 @@ nav{
     position:sticky;
     top:0;
     z-index:999;
-    background:rgba(2,13,22,.88);
+    background:rgba(2,13,22,.90);
     backdrop-filter:blur(18px);
-    border-bottom:1px solid rgba(34,211,238,.13);
+    border-bottom:1px solid rgba(34,211,238,.12);
 }
 
 .nav-inner{
     width:90%;
     max-width:1200px;
-    margin:auto;
     min-height:72px;
+    margin:auto;
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -93,13 +93,13 @@ nav{
 nav ul{
     display:flex;
     align-items:center;
-    gap:28px;
+    gap:27px;
     list-style:none;
 }
 
 nav ul a{
+    color:#cbd8df;
     font-size:13px;
-    color:#d1dce3;
     transition:.25s;
 }
 
@@ -127,11 +127,11 @@ nav ul a:hover{
     overflow:hidden;
 
     background:
-        radial-gradient(circle at 76% 45%,
+        radial-gradient(circle at 76% 42%,
         rgba(0,174,255,.18),
-        transparent 28%),
+        transparent 27%),
 
-        radial-gradient(circle at 12% 35%,
+        radial-gradient(circle at 12% 32%,
         rgba(34,211,238,.08),
         transparent 25%),
 
@@ -141,9 +141,6 @@ nav ul a:hover{
         #031725 55%,
         #03111c 100%);
 }
-
-
-/* DIGITAL GRID */
 
 .hero::before{
     content:"";
@@ -157,33 +154,23 @@ nav ul a:hover{
     background-size:55px 55px;
 
     mask-image:
-        linear-gradient(to bottom,rgba(0,0,0,.8),transparent);
+        linear-gradient(to bottom,rgba(0,0,0,.9),transparent);
 
     pointer-events:none;
 }
-
-
-/* GLOW */
 
 .hero::after{
     content:"";
     position:absolute;
-
-    width:500px;
-    height:500px;
-
+    width:520px;
+    height:520px;
     border-radius:50%;
-
-    right:8%;
-    top:20%;
-
-    background:rgba(0,183,255,.12);
-
+    right:5%;
+    top:17%;
+    background:rgba(0,183,255,.10);
     filter:blur(120px);
-
     pointer-events:none;
 }
-
 
 .hero-inner{
     width:90%;
@@ -192,7 +179,6 @@ nav ul a:hover{
 
     display:grid;
     grid-template-columns:1.08fr .92fr;
-
     align-items:center;
     gap:45px;
 
@@ -201,39 +187,39 @@ nav ul a:hover{
 }
 
 
-/* HERO TEXT */
+/* HERO BADGE */
 
 .hero-badge{
     display:inline-flex;
     align-items:center;
-    gap:10px;
+    gap:9px;
 
     padding:8px 15px;
 
-    border:1px solid rgba(34,211,238,.65);
+    border:1px solid rgba(34,211,238,.60);
     border-radius:25px;
+
+    background:rgba(34,211,238,.04);
 
     color:var(--cyan);
 
-    font-size:11px;
+    font-size:10px;
     font-weight:800;
     letter-spacing:1.5px;
 
     margin-bottom:22px;
-
-    background:rgba(34,211,238,.04);
 }
 
 .hero-badge-dot{
     width:5px;
     height:5px;
-
-    background:var(--cyan);
     border-radius:50%;
-
+    background:var(--cyan);
     box-shadow:0 0 12px var(--cyan);
 }
 
+
+/* HERO TEXT */
 
 .hero h1{
     font-size:clamp(56px,7vw,86px);
@@ -257,17 +243,16 @@ nav ul a:hover{
     color:transparent;
 }
 
-
 .hero h2{
+    max-width:620px;
     font-size:22px;
     line-height:1.35;
     margin-bottom:17px;
-    max-width:620px;
 }
 
 .hero-description{
-    color:#9bb2c0;
     max-width:620px;
+    color:#9bb2c0;
     font-size:15px;
 }
 
@@ -324,12 +309,12 @@ nav ul a:hover{
 }
 
 
-/* MINI SPECIALTIES */
+/* SPECIALTIES */
 
 .specialties{
     display:flex;
     flex-wrap:wrap;
-    gap:23px;
+    gap:22px;
     margin-top:35px;
 }
 
@@ -343,7 +328,6 @@ nav ul a:hover{
     font-size:10px;
     font-weight:700;
     text-transform:uppercase;
-    letter-spacing:.5px;
 }
 
 .specialty-icon{
@@ -369,25 +353,24 @@ nav ul a:hover{
 
 .hero-visual{
     position:relative;
-    min-height:600px;
+    min-height:610px;
 
     display:flex;
     justify-content:center;
     align-items:flex-end;
 }
 
-
 .hero-ring{
     position:absolute;
 
-    width:420px;
-    height:420px;
+    width:430px;
+    height:430px;
 
     border-radius:50%;
 
     border:1px solid rgba(34,211,238,.17);
 
-    bottom:60px;
+    bottom:55px;
 
     box-shadow:
         0 0 80px rgba(34,211,238,.06),
@@ -399,8 +382,8 @@ nav ul a:hover{
 
     position:absolute;
 
-    width:330px;
-    height:330px;
+    width:340px;
+    height:340px;
 
     border-radius:50%;
 
@@ -411,7 +394,6 @@ nav ul a:hover{
 
     transform:translate(-50%,-50%);
 }
-
 
 .hero-photo{
     width:100%;
@@ -426,44 +408,132 @@ nav ul a:hover{
 }
 
 
-/* CREATIVE WORDS */
+/* =========================================================
+   CREATE / EDIT / INNOVATE CARDS
+========================================================= */
 
 .creative-note{
     position:absolute;
-    right:-10px;
-    top:90px;
+    right:-65px;
+    top:75px;
 
-    color:rgba(137,226,255,.55);
+    display:flex;
+    flex-direction:column;
+    gap:14px;
 
-    font-size:21px;
-    line-height:1.5;
-
-    font-style:italic;
-
-    transform:rotate(-6deg);
-
-    z-index:4;
+    z-index:7;
 }
 
-.creative-note span{
+.creative-card{
+    width:205px;
+    min-height:82px;
+
+    display:flex;
+    align-items:center;
+    gap:13px;
+
+    padding:14px 15px;
+
+    border-radius:14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(6,38,57,.94),
+            rgba(2,20,32,.94)
+        );
+
+    border:1px solid rgba(34,211,238,.40);
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,.30),
+        0 0 24px rgba(34,211,238,.07);
+
+    backdrop-filter:blur(12px);
+
+    transition:.3s;
+}
+
+.creative-card:nth-child(1){
+    transform:translateX(-20px);
+}
+
+.creative-card:nth-child(2){
+    transform:translateX(5px);
+}
+
+.creative-card:nth-child(3){
+    transform:translateX(-8px);
+}
+
+.creative-card:hover{
+    border-color:var(--cyan);
+
+    box-shadow:
+        0 16px 40px rgba(0,0,0,.36),
+        0 0 28px rgba(34,211,238,.18);
+}
+
+.creative-icon{
+    flex:0 0 47px;
+
+    width:47px;
+    height:47px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:11px;
+
+    background:rgba(34,211,238,.08);
+
+    border:1px solid rgba(34,211,238,.24);
+
+    color:var(--cyan);
+
+    font-size:23px;
+}
+
+.creative-card strong{
     display:block;
+
+    color:#ffffff;
+
+    font-size:12px;
+    font-weight:900;
+
+    letter-spacing:.8px;
+
+    margin-bottom:2px;
+}
+
+.creative-card small{
+    display:block;
+
+    color:#9db5c3;
+
+    font-size:9px;
+
+    line-height:1.35;
 }
 
 
-/* QUOTE */
+/* HERO QUOTE */
 
 .hero-quote{
     position:absolute;
-    right:-20px;
-    bottom:70px;
 
-    width:210px;
+    right:-30px;
+    bottom:62px;
 
-    padding:17px;
+    width:220px;
+
+    padding:17px 18px;
 
     border-radius:12px;
 
-    background:rgba(3,23,37,.78);
+    background:rgba(3,23,37,.80);
 
     border:1px solid rgba(34,211,238,.22);
 
@@ -471,9 +541,10 @@ nav ul a:hover{
 
     font-size:12px;
     font-style:italic;
+
     color:#dcecf3;
 
-    z-index:5;
+    z-index:6;
 }
 
 
@@ -497,9 +568,9 @@ nav ul a:hover{
 
     background:
         linear-gradient(
-        135deg,
-        rgba(5,31,46,.97),
-        rgba(3,21,34,.97)
+            135deg,
+            rgba(5,31,46,.97),
+            rgba(3,21,34,.97)
         );
 
     overflow:hidden;
@@ -509,6 +580,7 @@ nav ul a:hover{
 
 .stat{
     padding:25px;
+
     display:flex;
     align-items:center;
     gap:15px;
@@ -529,6 +601,7 @@ nav ul a:hover{
     border-radius:9px;
 
     background:rgba(34,211,238,.08);
+
     color:var(--cyan);
 
     font-size:20px;
@@ -583,12 +656,13 @@ nav ul a:hover{
 
 .portfolio{
     background:
-        radial-gradient(circle at 80% 30%,
-        rgba(0,168,255,.06),
-        transparent 30%),
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(0,168,255,.06),
+            transparent 30%
+        ),
         #020f19;
 }
-
 
 .project-grid{
     display:grid;
@@ -596,15 +670,15 @@ nav ul a:hover{
     gap:22px;
 }
 
-
 .project-card{
     border:1px solid rgba(34,211,238,.22);
 
-    background:linear-gradient(
-        145deg,
-        #061d2b,
-        #041520
-    );
+    background:
+        linear-gradient(
+            145deg,
+            #061d2b,
+            #041520
+        );
 
     border-radius:14px;
 
@@ -623,7 +697,6 @@ nav ul a:hover{
         0 0 30px rgba(34,211,238,.05);
 }
 
-
 .project-video{
     position:relative;
     background:#000;
@@ -632,15 +705,17 @@ nav ul a:hover{
 
 .project-video video{
     display:block;
+
     width:100%;
+
     aspect-ratio:16/9;
+
     object-fit:contain;
 
     background:#000;
 
     border-radius:8px;
 }
-
 
 .project-content{
     padding:22px;
@@ -693,9 +768,11 @@ nav ul a:hover{
 
 .services{
     background:
-        radial-gradient(circle at 15% 60%,
-        rgba(34,211,238,.06),
-        transparent 30%),
+        radial-gradient(
+            circle at 15% 60%,
+            rgba(34,211,238,.06),
+            transparent 30%
+        ),
         #031725;
 }
 
@@ -706,7 +783,7 @@ nav ul a:hover{
 }
 
 .service{
-    min-height:230px;
+    min-height:235px;
 
     padding:23px;
 
@@ -716,9 +793,9 @@ nav ul a:hover{
 
     background:
         linear-gradient(
-        145deg,
-        #062131,
-        #041722
+            145deg,
+            #062131,
+            #041722
         );
 
     transition:.35s;
@@ -730,9 +807,12 @@ nav ul a:hover{
 
 .service:hover{
     transform:translateY(-7px);
+
     border-color:var(--cyan);
 
-    box-shadow:0 18px 40px rgba(0,0,0,.25);
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.25),
+        0 0 25px rgba(34,211,238,.06);
 }
 
 .service-icon{
@@ -794,9 +874,9 @@ nav ul a:hover{
 
     background:
         linear-gradient(
-        145deg,
-        #062131,
-        #041722
+            145deg,
+            #062131,
+            #041722
         );
 
     border:1px solid rgba(34,211,238,.20);
@@ -852,7 +932,9 @@ nav ul a:hover{
 
 .tool:hover{
     transform:translateY(-3px);
+
     border-color:var(--cyan);
+
     color:white;
 }
 
@@ -875,14 +957,16 @@ nav ul a:hover{
     border:1px solid rgba(34,211,238,.25);
 
     background:
-        radial-gradient(circle at 50% 0%,
-        rgba(34,211,238,.12),
-        transparent 40%),
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(34,211,238,.12),
+            transparent 40%
+        ),
 
         linear-gradient(
-        145deg,
-        #062131,
-        #041722
+            145deg,
+            #062131,
+            #041722
         );
 }
 
@@ -893,7 +977,9 @@ nav ul a:hover{
 
 .contact-box p{
     color:#96aebb;
+
     max-width:650px;
+
     margin:0 auto 25px;
 }
 
@@ -919,6 +1005,19 @@ footer{
    RESPONSIVE
 ========================================================= */
 
+@media(max-width:1100px){
+
+    .creative-note{
+        right:0;
+    }
+
+    .hero-quote{
+        right:0;
+    }
+
+}
+
+
 @media(max-width:1000px){
 
     .hero-inner{
@@ -939,7 +1038,7 @@ footer{
     }
 
     .hero-visual{
-        min-height:480px;
+        min-height:500px;
     }
 
     .hero-photo{
@@ -975,6 +1074,7 @@ footer{
     .about-grid{
         grid-template-columns:1fr;
     }
+
 }
 
 
@@ -997,7 +1097,7 @@ footer{
     }
 
     .hero-visual{
-        min-height:400px;
+        min-height:410px;
     }
 
     .hero-photo{
@@ -1063,11 +1163,26 @@ footer{
     </div>
 
     <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
+
+        <li>
+            <a href="#home">Home</a>
+        </li>
+
+        <li>
+            <a href="#portfolio">Portfolio</a>
+        </li>
+
+        <li>
+            <a href="#services">Services</a>
+        </li>
+
+        <li>
+            <a href="#about">About</a>
+        </li>
+
+        <li>
+            <a href="#skills">Skills</a>
+        </li>
 
         <li>
             <a href="#contact" class="nav-contact">
@@ -1082,7 +1197,6 @@ footer{
 </nav>
 
 
-
 <!-- ======================================================
      HERO
 ====================================================== -->
@@ -1092,7 +1206,7 @@ footer{
 <div class="hero-inner">
 
 
-    <!-- HERO TEXT -->
+    <!-- LEFT SIDE -->
 
     <div>
 
@@ -1123,8 +1237,9 @@ footer{
 
         <p class="hero-description">
 
-            I create AI-assisted promotional videos, product commercials,
-            social media content and digital visuals by combining creative
+            I create AI-assisted promotional videos,
+            product commercials, social media content
+            and digital visuals by combining creative
             prompting, AI generation and video editing.
 
         </p>
@@ -1132,11 +1247,17 @@ footer{
 
         <div class="hero-buttons">
 
-            <a href="#portfolio" class="btn btn-primary">
+            <a
+                href="#portfolio"
+                class="btn btn-primary"
+            >
                 ▶ &nbsp; Explore My AI Work
             </a>
 
-            <a href="#contact" class="btn btn-outline">
+            <a
+                href="#contact"
+                class="btn btn-outline"
+            >
                 Let's Create Something →
             </a>
 
@@ -1145,35 +1266,62 @@ footer{
 
         <div class="specialties">
 
+
             <div class="specialty">
-                <span class="specialty-icon">▣</span>
+
+                <span class="specialty-icon">
+                    ▶
+                </span>
+
                 AI Video
+
             </div>
 
+
             <div class="specialty">
-                <span class="specialty-icon">✂</span>
+
+                <span class="specialty-icon">
+                    ✂
+                </span>
+
                 Video Editing
+
             </div>
 
+
             <div class="specialty">
-                <span class="specialty-icon">▶</span>
+
+                <span class="specialty-icon">
+                    ◉
+                </span>
+
                 Social Media
+
             </div>
 
+
             <div class="specialty">
-                <span class="specialty-icon">◇</span>
+
+                <span class="specialty-icon">
+                    ◇
+                </span>
+
                 Product Ads
+
             </div>
+
 
         </div>
+
 
     </div>
 
 
 
-    <!-- HERO IMAGE -->
+    <!-- RIGHT SIDE -->
 
     <div class="hero-visual">
+
 
         <div class="hero-ring"></div>
 
@@ -1185,13 +1333,79 @@ footer{
         >
 
 
+
+        <!-- CREATE EDIT INNOVATE -->
+
         <div class="creative-note">
 
-            <span>Create</span>
-            <span>Edit</span>
-            <span>Innovate</span>
+
+            <div class="creative-card">
+
+                <div class="creative-icon">
+                    💡
+                </div>
+
+                <div>
+
+                    <strong>
+                        CREATE
+                    </strong>
+
+                    <small>
+                        Turn ideas into visuals
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="creative-card">
+
+                <div class="creative-icon">
+                    🎬
+                </div>
+
+                <div>
+
+                    <strong>
+                        EDIT
+                    </strong>
+
+                    <small>
+                        Polish with purpose
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="creative-card">
+
+                <div class="creative-icon">
+                    🚀
+                </div>
+
+                <div>
+
+                    <strong>
+                        INNOVATE
+                    </strong>
+
+                    <small>
+                        Bring ideas to life
+                    </small>
+
+                </div>
+
+            </div>
+
 
         </div>
+
 
 
         <div class="hero-quote">
@@ -1201,13 +1415,13 @@ footer{
 
         </div>
 
+
     </div>
 
 
 </div>
 
 </section>
-
 
 
 <!-- ======================================================
@@ -1223,47 +1437,86 @@ footer{
 
     <div class="stat">
 
-        <div class="stat-icon">▶</div>
+        <div class="stat-icon">
+            ▶
+        </div>
 
         <div>
-            <strong>3+</strong>
-            <span>Video Portfolio Projects</span>
+
+            <strong>
+                3+
+            </strong>
+
+            <span>
+                Video Portfolio Projects
+            </span>
+
         </div>
 
     </div>
 
 
+
     <div class="stat">
 
-        <div class="stat-icon">✦</div>
+        <div class="stat-icon">
+            ✦
+        </div>
 
         <div>
-            <strong>AI + Editing</strong>
-            <span>Creative Production</span>
+
+            <strong>
+                AI + Editing
+            </strong>
+
+            <span>
+                Creative Production
+            </span>
+
         </div>
 
     </div>
 
 
+
     <div class="stat">
 
-        <div class="stat-icon">✣</div>
+        <div class="stat-icon">
+            ✣
+        </div>
 
         <div>
-            <strong>AI-Powered</strong>
-            <span>Creative Workflow</span>
+
+            <strong>
+                AI-Powered
+            </strong>
+
+            <span>
+                Creative Workflow
+            </span>
+
         </div>
 
     </div>
 
 
+
     <div class="stat">
 
-        <div class="stat-icon">◇</div>
+        <div class="stat-icon">
+            ◇
+        </div>
 
         <div>
-            <strong>Open</strong>
-            <span>For Opportunities</span>
+
+            <strong>
+                Open
+            </strong>
+
+            <span>
+                For Opportunities
+            </span>
+
         </div>
 
     </div>
@@ -1274,14 +1527,16 @@ footer{
 </div>
 
 </div>
-
 
 
 <!-- ======================================================
      PORTFOLIO
 ====================================================== -->
 
-<section class="portfolio" id="portfolio">
+<section
+    class="portfolio"
+    id="portfolio"
+>
 
 <div class="container">
 
@@ -1290,9 +1545,11 @@ footer{
         Featured Work
     </div>
 
+
     <h2 class="section-title">
         Selected Projects
     </h2>
+
 
     <p class="section-description">
 
@@ -1310,14 +1567,21 @@ footer{
 
         <article class="project-card">
 
+
             <div class="project-video">
 
-                <video controls preload="metadata" playsinline>
+                <video
+                    controls
+                    preload="metadata"
+                    playsinline
+                >
 
                     <source
                         src="Parent_preparing_milk_for_toddler_20260914171510.mp4"
                         type="video/mp4"
                     >
+
+                    Your browser does not support HTML video.
 
                 </video>
 
@@ -1345,17 +1609,26 @@ footer{
 
                 <div class="tags">
 
-                    <span class="tag">AI Video</span>
+                    <span class="tag">
+                        AI Video
+                    </span>
 
-                    <span class="tag">Google Flow</span>
+                    <span class="tag">
+                        Google Flow
+                    </span>
 
-                    <span class="tag">Video Editing</span>
+                    <span class="tag">
+                        Video Editing
+                    </span>
 
-                    <span class="tag">Advertising</span>
+                    <span class="tag">
+                        Advertising
+                    </span>
 
                 </div>
 
             </div>
+
 
         </article>
 
@@ -1365,14 +1638,21 @@ footer{
 
         <article class="project-card">
 
+
             <div class="project-video">
 
-                <video controls preload="metadata" playsinline>
+                <video
+                    controls
+                    preload="metadata"
+                    playsinline
+                >
 
                     <source
                         src="202609142159.mp4"
                         type="video/mp4"
                     >
+
+                    Your browser does not support HTML video.
 
                 </video>
 
@@ -1400,17 +1680,26 @@ footer{
 
                 <div class="tags">
 
-                    <span class="tag">AI Content</span>
+                    <span class="tag">
+                        AI Content
+                    </span>
 
-                    <span class="tag">Social Media</span>
+                    <span class="tag">
+                        Social Media
+                    </span>
 
-                    <span class="tag">Prompt Engineering</span>
+                    <span class="tag">
+                        Prompt Engineering
+                    </span>
 
-                    <span class="tag">Short Form</span>
+                    <span class="tag">
+                        Short Form
+                    </span>
 
                 </div>
 
             </div>
+
 
         </article>
 
@@ -1420,14 +1709,21 @@ footer{
 
         <article class="project-card">
 
+
             <div class="project-video">
 
-                <video controls preload="metadata" playsinline>
+                <video
+                    controls
+                    preload="metadata"
+                    playsinline
+                >
 
                     <source
                         src="electronics-commercial.mp4"
                         type="video/mp4"
                     >
+
+                    Your browser does not support HTML video.
 
                 </video>
 
@@ -1455,17 +1751,26 @@ footer{
 
                 <div class="tags">
 
-                    <span class="tag">AI Video</span>
+                    <span class="tag">
+                        AI Video
+                    </span>
 
-                    <span class="tag">Commercial</span>
+                    <span class="tag">
+                        Commercial
+                    </span>
 
-                    <span class="tag">Google Flow</span>
+                    <span class="tag">
+                        Google Flow
+                    </span>
 
-                    <span class="tag">Video Editing</span>
+                    <span class="tag">
+                        Video Editing
+                    </span>
 
                 </div>
 
             </div>
+
 
         </article>
 
@@ -1477,12 +1782,14 @@ footer{
 </section>
 
 
-
 <!-- ======================================================
      SERVICES
 ====================================================== -->
 
-<section class="services" id="services">
+<section
+    class="services"
+    id="services"
+>
 
 <div class="container">
 
@@ -1491,14 +1798,16 @@ footer{
         What I Can Do
     </div>
 
+
     <h2 class="section-title">
         Services I Offer
     </h2>
 
+
     <p class="section-description">
 
-        Creative and reliable digital solutions for brands,
-        businesses and personal projects.
+        Creative and reliable digital solutions for
+        brands, businesses and personal projects.
 
     </p>
 
@@ -1507,10 +1816,12 @@ footer{
     <div class="services-grid">
 
 
+        <!-- SERVICE 1 -->
+
         <div class="service">
 
             <div class="service-icon">
-                ▣
+                ▶
             </div>
 
             <h3>
@@ -1528,6 +1839,8 @@ footer{
         </div>
 
 
+
+        <!-- SERVICE 2 -->
 
         <div class="service">
 
@@ -1551,6 +1864,8 @@ footer{
 
 
 
+        <!-- SERVICE 3 -->
+
         <div class="service">
 
             <div class="service-icon">
@@ -1573,6 +1888,8 @@ footer{
 
 
 
+        <!-- SERVICE 4 -->
+
         <div class="service">
 
             <div class="service-icon">
@@ -1594,6 +1911,8 @@ footer{
         </div>
 
 
+
+        <!-- SERVICE 5 -->
 
         <div class="service">
 
@@ -1623,12 +1942,14 @@ footer{
 </section>
 
 
-
 <!-- ======================================================
      ABOUT
 ====================================================== -->
 
-<section class="about" id="about">
+<section
+    class="about"
+    id="about"
+>
 
 <div class="container">
 
@@ -1653,6 +1974,7 @@ footer{
 
 
         <div class="about-text">
+
 
             <p>
 
@@ -1691,6 +2013,7 @@ footer{
 
             </p>
 
+
         </div>
 
 
@@ -1708,7 +2031,9 @@ footer{
 
         <div class="about-item">
 
-            <span class="about-check">✓</span>
+            <span class="about-check">
+                ✓
+            </span>
 
             AI-Assisted Video Creation
 
@@ -1717,7 +2042,9 @@ footer{
 
         <div class="about-item">
 
-            <span class="about-check">✓</span>
+            <span class="about-check">
+                ✓
+            </span>
 
             Short-Form Promotional Content
 
@@ -1726,7 +2053,9 @@ footer{
 
         <div class="about-item">
 
-            <span class="about-check">✓</span>
+            <span class="about-check">
+                ✓
+            </span>
 
             Product & Brand Advertisements
 
@@ -1735,7 +2064,9 @@ footer{
 
         <div class="about-item">
 
-            <span class="about-check">✓</span>
+            <span class="about-check">
+                ✓
+            </span>
 
             Prompt Engineering
 
@@ -1744,7 +2075,9 @@ footer{
 
         <div class="about-item">
 
-            <span class="about-check">✓</span>
+            <span class="about-check">
+                ✓
+            </span>
 
             Social Media Content
 
@@ -1753,7 +2086,9 @@ footer{
 
         <div class="about-item">
 
-            <span class="about-check">✓</span>
+            <span class="about-check">
+                ✓
+            </span>
 
             Video Editing
 
@@ -1762,7 +2097,9 @@ footer{
 
         <div class="about-item">
 
-            <span class="about-check">✓</span>
+            <span class="about-check">
+                ✓
+            </span>
 
             Virtual & Administrative Support
 
@@ -1779,12 +2116,14 @@ footer{
 </section>
 
 
-
 <!-- ======================================================
-     TOOLS / SKILLS
+     TOOLS & SKILLS
 ====================================================== -->
 
-<section class="tools" id="skills">
+<section
+    class="tools"
+    id="skills"
+>
 
 <div class="container">
 
@@ -1801,8 +2140,9 @@ footer{
 
     <p class="section-description">
 
-        Combining creativity, AI tools and digital production
-        techniques to create engaging visual content.
+        Combining creativity, AI tools and digital
+        production techniques to create engaging
+        visual content.
 
     </p>
 
@@ -1878,17 +2218,20 @@ footer{
 
     </div>
 
+
 </div>
 
 </section>
-
 
 
 <!-- ======================================================
      CONTACT
 ====================================================== -->
 
-<section class="contact" id="contact">
+<section
+    class="contact"
+    id="contact"
+>
 
 <div class="container">
 
@@ -1915,8 +2258,10 @@ footer{
         </p>
 
 
-        <div class="hero-buttons"
-             style="justify-content:center;">
+        <div
+            class="hero-buttons"
+            style="justify-content:center;"
+        >
 
 
             <a
@@ -1946,10 +2291,10 @@ footer{
 
     </div>
 
+
 </div>
 
 </section>
-
 
 
 <!-- ======================================================
@@ -1968,5 +2313,4 @@ footer{
 
 
 </body>
-
 </html>
