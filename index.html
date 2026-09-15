@@ -7,6 +7,8 @@
 
 <title>Leniel Bayoran | AI Video Creator & Digital Content Creator</title>
 
+<meta name="description" content="Portfolio of Leniel Bayoran — AI Video Creator, Video Editor and Digital Content Creator specializing in cinematic AI advertisements, social media content and visual storytelling.">
+
 <style>
 
 /* =========================================================
@@ -21,24 +23,64 @@
 }
 
 :root{
-    --bg:#020d16;
-    --bg2:#031725;
-    --card:#061d2b;
-    --card2:#082536;
-    --cyan:#22d3ee;
-    --cyan2:#00b8f5;
+    --bg:#020912;
+    --bg-soft:#04121e;
+    --card:#061725;
+    --card-light:#082132;
+
+    --cyan:#25d8f5;
+    --cyan-light:#74ecff;
     --blue:#3b82f6;
-    --white:#f5fbff;
-    --muted:#94aebe;
-    --border:rgba(34,211,238,.22);
+    --purple:#7c6cff;
+
+    --white:#f7fcff;
+    --muted:#91a9b8;
+
+    --border:rgba(37,216,245,.17);
+
+    --shadow:
+        0 25px 70px rgba(0,0,0,.35);
+}
+
+html{
+    scroll-padding-top:80px;
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
     background:var(--bg);
     color:var(--white);
-    line-height:1.6;
+    line-height:1.65;
     overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-1;
+
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(37,216,245,.055),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 85% 35%,
+            rgba(59,130,246,.055),
+            transparent 30%
+        );
 }
 
 a{
@@ -46,14 +88,44 @@ a{
     color:inherit;
 }
 
+img{
+    max-width:100%;
+}
+
+button,
+a{
+    -webkit-tap-highlight-color:transparent;
+}
+
 .container{
-    width:90%;
-    max-width:1200px;
+    width:min(1180px,90%);
     margin:auto;
 }
 
 section{
-    padding:90px 0;
+    padding:100px 0;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar{
+    width:9px;
+}
+
+::-webkit-scrollbar-track{
+    background:#020912;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#0e3a50;
+    border-radius:10px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#15516c;
 }
 
 
@@ -64,24 +136,27 @@ section{
 nav{
     position:sticky;
     top:0;
-    z-index:999;
-    background:rgba(2,13,22,.90);
-    backdrop-filter:blur(18px);
-    border-bottom:1px solid rgba(34,211,238,.12);
+    z-index:1000;
+
+    background:rgba(2,9,18,.78);
+    backdrop-filter:blur(20px);
+
+    border-bottom:
+        1px solid rgba(37,216,245,.09);
 }
 
 .nav-inner{
-    width:90%;
-    max-width:1200px;
-    min-height:72px;
+    width:min(1180px,90%);
+    min-height:76px;
     margin:auto;
+
     display:flex;
-    justify-content:space-between;
     align-items:center;
+    justify-content:space-between;
 }
 
 .logo{
-    font-size:22px;
+    font-size:20px;
     font-weight:900;
     letter-spacing:2px;
 }
@@ -90,28 +165,39 @@ nav{
     color:var(--cyan);
 }
 
-nav ul{
+.nav-links{
     display:flex;
     align-items:center;
-    gap:27px;
+    gap:28px;
     list-style:none;
 }
 
-nav ul a{
-    color:#cbd8df;
-    font-size:13px;
-    transition:.25s;
+.nav-links a{
+    font-size:12px;
+    color:#b5c6d0;
+    transition:.25s ease;
 }
 
-nav ul a:hover{
+.nav-links a:hover{
     color:var(--cyan);
 }
 
 .nav-contact{
     padding:9px 17px;
-    border:1px solid var(--cyan);
-    border-radius:25px;
-    color:var(--cyan);
+    border-radius:30px;
+
+    border:
+        1px solid rgba(37,216,245,.55);
+
+    color:var(--cyan)!important;
+
+    background:
+        rgba(37,216,245,.04);
+}
+
+.nav-contact:hover{
+    background:
+        rgba(37,216,245,.1);
 }
 
 
@@ -120,26 +206,37 @@ nav ul a:hover{
 ========================================================= */
 
 .hero{
+    min-height:
+        calc(100vh - 76px);
+
     position:relative;
-    min-height:calc(100vh - 72px);
-    display:flex;
-    align-items:center;
     overflow:hidden;
 
-    background:
-        radial-gradient(circle at 76% 42%,
-        rgba(0,174,255,.18),
-        transparent 27%),
+    display:flex;
+    align-items:center;
 
-        radial-gradient(circle at 12% 32%,
-        rgba(34,211,238,.08),
-        transparent 25%),
+    padding:
+        70px 0 55px;
+
+    background:
+        radial-gradient(
+            circle at 77% 48%,
+            rgba(37,216,245,.13),
+            transparent 27%
+        ),
+
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(59,130,246,.08),
+            transparent 28%
+        ),
 
         linear-gradient(
-        135deg,
-        #020d16 0%,
-        #031725 55%,
-        #03111c 100%);
+            135deg,
+            #020912,
+            #031421 55%,
+            #020b13
+        );
 }
 
 .hero::before{
@@ -148,174 +245,254 @@ nav ul a:hover{
     inset:0;
 
     background-image:
-        linear-gradient(rgba(34,211,238,.025) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(34,211,238,.025) 1px,transparent 1px);
+        linear-gradient(
+            rgba(37,216,245,.023) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(37,216,245,.023) 1px,
+            transparent 1px
+        );
 
     background-size:55px 55px;
 
     mask-image:
-        linear-gradient(to bottom,rgba(0,0,0,.9),transparent);
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,.8),
+            transparent
+        );
 
     pointer-events:none;
 }
 
-.hero::after{
-    content:"";
+.hero-glow{
     position:absolute;
-    width:520px;
-    height:520px;
-    border-radius:50%;
+
+    width:500px;
+    height:500px;
+
     right:5%;
-    top:17%;
-    background:rgba(0,183,255,.10);
-    filter:blur(120px);
+    top:18%;
+
+    border-radius:50%;
+
+    background:
+        rgba(37,216,245,.075);
+
+    filter:blur(100px);
+
     pointer-events:none;
 }
 
 .hero-inner{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
-
-    display:grid;
-    grid-template-columns:1.08fr .92fr;
-    align-items:center;
-    gap:45px;
-
     position:relative;
     z-index:2;
+
+    display:grid;
+
+    grid-template-columns:
+        1.08fr .92fr;
+
+    align-items:center;
+
+    gap:45px;
 }
 
 
-/* HERO BADGE */
+/* =========================================================
+   HERO LEFT
+========================================================= */
 
 .hero-badge{
     display:inline-flex;
     align-items:center;
     gap:9px;
 
-    padding:8px 15px;
+    margin-bottom:22px;
 
-    border:1px solid rgba(34,211,238,.60);
-    border-radius:25px;
+    padding:8px 14px;
 
-    background:rgba(34,211,238,.04);
+    border-radius:30px;
+
+    border:
+        1px solid rgba(37,216,245,.42);
+
+    background:
+        rgba(37,216,245,.045);
 
     color:var(--cyan);
 
     font-size:10px;
     font-weight:800;
-    letter-spacing:1.5px;
-
-    margin-bottom:22px;
+    letter-spacing:1.6px;
 }
 
-.hero-badge-dot{
-    width:5px;
-    height:5px;
+.badge-dot{
+    width:6px;
+    height:6px;
+
     border-radius:50%;
+
     background:var(--cyan);
-    box-shadow:0 0 12px var(--cyan);
+
+    box-shadow:
+        0 0 14px var(--cyan);
 }
-
-
-/* HERO TEXT */
 
 .hero h1{
-    font-size:clamp(56px,7vw,86px);
+    max-width:720px;
+
+    font-size:
+        clamp(55px,7.3vw,88px);
+
     line-height:.92;
-    letter-spacing:-3px;
-    margin-bottom:23px;
+
+    letter-spacing:-4px;
+
+    margin-bottom:25px;
 }
 
 .hero h1 span{
     display:block;
 
-    background:linear-gradient(
-        90deg,
-        #20d9f3,
-        #00b9f4,
-        #417cff
-    );
+    background:
+        linear-gradient(
+            90deg,
+            var(--cyan-light),
+            var(--cyan),
+            #4e88ff
+        );
 
     -webkit-background-clip:text;
     background-clip:text;
+
     color:transparent;
 }
 
-.hero h2{
-    max-width:620px;
-    font-size:22px;
-    line-height:1.35;
-    margin-bottom:17px;
+.hero-role{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:9px;
+
+    margin-bottom:20px;
+
+    font-size:13px;
+    font-weight:750;
+    letter-spacing:.7px;
+
+    color:#d9e8ef;
+}
+
+.role-divider{
+    color:var(--cyan);
 }
 
 .hero-description{
-    max-width:620px;
-    color:#9bb2c0;
+    max-width:650px;
+
+    color:#9bb0bd;
+
     font-size:15px;
+
+    line-height:1.8;
+}
+
+.hero-description strong{
+    color:#d9f7ff;
+    font-weight:650;
 }
 
 
-/* BUTTONS */
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
 
 .hero-buttons{
     display:flex;
-    gap:13px;
     flex-wrap:wrap;
-    margin-top:28px;
+    gap:13px;
+
+    margin-top:30px;
 }
 
 .btn{
     display:inline-flex;
     align-items:center;
     justify-content:center;
+    gap:8px;
 
-    padding:13px 21px;
+    min-height:46px;
 
-    border-radius:8px;
+    padding:0 21px;
 
-    font-size:12px;
+    border-radius:9px;
+
+    font-size:11px;
     font-weight:800;
 
-    transition:.3s;
+    letter-spacing:.3px;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
 }
 
 .btn-primary{
-    color:#00121d;
+    color:#00151d;
 
-    background:linear-gradient(
-        135deg,
-        #1dd9f5,
-        #64e6ff
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #26d9f5,
+            #78ebff
+        );
 
-    box-shadow:0 10px 35px rgba(34,211,238,.18);
+    box-shadow:
+        0 12px 35px
+        rgba(37,216,245,.16);
 }
 
 .btn-primary:hover{
     transform:translateY(-3px);
-    box-shadow:0 15px 40px rgba(34,211,238,.32);
+
+    box-shadow:
+        0 16px 42px
+        rgba(37,216,245,.28);
 }
 
 .btn-outline{
-    border:1px solid var(--cyan);
+    border:
+        1px solid rgba(37,216,245,.55);
+
     color:var(--cyan);
+
+    background:
+        rgba(37,216,245,.025);
 }
 
 .btn-outline:hover{
-    background:rgba(34,211,238,.10);
     transform:translateY(-3px);
+
+    background:
+        rgba(37,216,245,.08);
 }
 
 
-/* SPECIALTIES */
+/* =========================================================
+   HERO SPECIALTIES
+========================================================= */
 
 .specialties{
     display:flex;
     flex-wrap:wrap;
-    gap:22px;
-    margin-top:35px;
+    gap:12px;
+
+    margin-top:34px;
 }
 
 .specialty{
@@ -323,36 +500,40 @@ nav ul a:hover{
     align-items:center;
     gap:8px;
 
-    color:#9eb4c1;
+    padding:8px 11px;
 
-    font-size:10px;
-    font-weight:700;
-    text-transform:uppercase;
-}
-
-.specialty-icon{
-    width:31px;
-    height:31px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    border:
+        1px solid rgba(37,216,245,.10);
 
     border-radius:8px;
 
+    background:
+        rgba(6,29,43,.45);
+
+    color:#a8bdc8;
+
+    font-size:9px;
+    font-weight:750;
+
+    text-transform:uppercase;
+
+    letter-spacing:.7px;
+}
+
+.specialty-icon{
     color:var(--cyan);
 
-    background:rgba(34,211,238,.07);
-    border:1px solid rgba(34,211,238,.16);
+    font-size:13px;
 }
 
 
 /* =========================================================
-   HERO PORTRAIT
+   HERO VISUAL
 ========================================================= */
 
 .hero-visual{
     position:relative;
+
     min-height:610px;
 
     display:flex;
@@ -363,18 +544,23 @@ nav ul a:hover{
 .hero-ring{
     position:absolute;
 
-    width:430px;
-    height:430px;
+    width:435px;
+    height:435px;
+
+    bottom:52px;
 
     border-radius:50%;
 
-    border:1px solid rgba(34,211,238,.17);
-
-    bottom:55px;
+    border:
+        1px solid
+        rgba(37,216,245,.15);
 
     box-shadow:
-        0 0 80px rgba(34,211,238,.06),
-        inset 0 0 70px rgba(34,211,238,.03);
+        0 0 80px
+        rgba(37,216,245,.045),
+
+        inset 0 0 80px
+        rgba(37,216,245,.025);
 }
 
 .hero-ring::before{
@@ -382,17 +568,44 @@ nav ul a:hover{
 
     position:absolute;
 
-    width:340px;
-    height:340px;
+    width:345px;
+    height:345px;
+
+    left:50%;
+    top:50%;
+
+    transform:
+        translate(-50%,-50%);
 
     border-radius:50%;
 
-    border:1px dashed rgba(34,211,238,.13);
+    border:
+        1px dashed
+        rgba(37,216,245,.12);
+}
 
-    top:50%;
+.hero-ring::after{
+    content:"";
+
+    position:absolute;
+
+    width:250px;
+    height:250px;
+
     left:50%;
+    top:50%;
 
-    transform:translate(-50%,-50%);
+    transform:
+        translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(37,216,245,.08),
+            transparent 65%
+        );
 }
 
 .hero-photo{
@@ -403,196 +616,211 @@ nav ul a:hover{
     z-index:3;
 
     filter:
-        drop-shadow(0 30px 30px rgba(0,0,0,.45))
-        drop-shadow(0 0 30px rgba(0,194,255,.08));
+        drop-shadow(
+            0 32px 32px
+            rgba(0,0,0,.48)
+        );
 }
 
 
 /* =========================================================
-   CREATE / EDIT / INNOVATE CARDS
+   FLOATING CREATIVE CARDS
 ========================================================= */
 
-.creative-note{
+.float-card{
     position:absolute;
-    right:-65px;
-    top:75px;
-
-    display:flex;
-    flex-direction:column;
-    gap:14px;
-
-    z-index:7;
-}
-
-.creative-card{
-    width:205px;
-    min-height:82px;
+    z-index:5;
 
     display:flex;
     align-items:center;
-    gap:13px;
+    gap:11px;
 
-    padding:14px 15px;
+    padding:12px 14px;
 
-    border-radius:14px;
+    min-width:180px;
+
+    border-radius:13px;
+
+    border:
+        1px solid
+        rgba(37,216,245,.28);
 
     background:
-        linear-gradient(
-            135deg,
-            rgba(6,38,57,.94),
-            rgba(2,20,32,.94)
-        );
+        rgba(4,25,39,.83);
 
-    border:1px solid rgba(34,211,238,.40);
+    backdrop-filter:
+        blur(14px);
 
     box-shadow:
-        0 12px 35px rgba(0,0,0,.30),
-        0 0 24px rgba(34,211,238,.07);
+        0 18px 40px
+        rgba(0,0,0,.3);
 
-    backdrop-filter:blur(12px);
-
-    transition:.3s;
+    animation:
+        floating 4s
+        ease-in-out infinite;
 }
 
-.creative-card:nth-child(1){
-    transform:translateX(-20px);
+.float-card.one{
+    top:100px;
+    right:-28px;
 }
 
-.creative-card:nth-child(2){
-    transform:translateX(5px);
+.float-card.two{
+    top:205px;
+    right:-65px;
+
+    animation-delay:.7s;
 }
 
-.creative-card:nth-child(3){
-    transform:translateX(-8px);
+.float-card.three{
+    top:310px;
+    right:-35px;
+
+    animation-delay:1.3s;
 }
 
-.creative-card:hover{
-    border-color:var(--cyan);
-
-    box-shadow:
-        0 16px 40px rgba(0,0,0,.36),
-        0 0 28px rgba(34,211,238,.18);
-}
-
-.creative-icon{
-    flex:0 0 47px;
-
-    width:47px;
-    height:47px;
+.float-icon{
+    width:40px;
+    height:40px;
 
     display:flex;
     align-items:center;
     justify-content:center;
 
-    border-radius:11px;
+    flex:0 0 40px;
 
-    background:rgba(34,211,238,.08);
+    border-radius:9px;
 
-    border:1px solid rgba(34,211,238,.24);
+    background:
+        rgba(37,216,245,.08);
 
-    color:var(--cyan);
+    border:
+        1px solid
+        rgba(37,216,245,.15);
 
-    font-size:23px;
+    font-size:18px;
 }
 
-.creative-card strong{
+.float-card strong{
     display:block;
 
-    color:#ffffff;
+    font-size:10px;
 
-    font-size:12px;
-    font-weight:900;
-
-    letter-spacing:.8px;
-
-    margin-bottom:2px;
+    letter-spacing:1px;
 }
 
-.creative-card small{
+.float-card small{
     display:block;
 
-    color:#9db5c3;
+    color:#8fa8b6;
 
-    font-size:9px;
+    font-size:8px;
 
-    line-height:1.35;
+    margin-top:2px;
 }
 
+@keyframes floating{
 
-/* HERO QUOTE */
+    0%,100%{
+        transform:translateY(0);
+    }
 
-.hero-quote{
-    position:absolute;
-
-    right:-30px;
-    bottom:62px;
-
-    width:220px;
-
-    padding:17px 18px;
-
-    border-radius:12px;
-
-    background:rgba(3,23,37,.80);
-
-    border:1px solid rgba(34,211,238,.22);
-
-    backdrop-filter:blur(12px);
-
-    font-size:12px;
-    font-style:italic;
-
-    color:#dcecf3;
-
-    z-index:6;
+    50%{
+        transform:translateY(-8px);
+    }
 }
 
 
 /* =========================================================
-   STATS
+   HERO QUOTE
 ========================================================= */
 
-.stats{
-    position:relative;
-    margin-top:-25px;
-    z-index:10;
+.hero-quote{
+    position:absolute;
+
+    right:-12px;
+    bottom:58px;
+
+    z-index:6;
+
+    max-width:230px;
+
+    padding:16px 18px;
+
+    border-radius:12px;
+
+    border:
+        1px solid
+        rgba(37,216,245,.18);
+
+    background:
+        rgba(3,20,32,.8);
+
+    backdrop-filter:
+        blur(14px);
+
+    color:#d9e8ef;
+
+    font-size:11px;
+
+    font-style:italic;
 }
 
-.stats-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
 
-    border:1px solid var(--border);
+/* =========================================================
+   CREATIVE BAR
+========================================================= */
+
+.creative-bar{
+    position:relative;
+    z-index:10;
+
+    margin-top:-25px;
+}
+
+.creative-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    border:
+        1px solid
+        rgba(37,216,245,.16);
 
     border-radius:14px;
+
+    overflow:hidden;
 
     background:
         linear-gradient(
             135deg,
-            rgba(5,31,46,.97),
-            rgba(3,21,34,.97)
+            rgba(6,30,44,.98),
+            rgba(3,18,29,.98)
         );
 
-    overflow:hidden;
-
-    box-shadow:0 18px 50px rgba(0,0,0,.25);
+    box-shadow:var(--shadow);
 }
 
-.stat{
-    padding:25px;
+.creative-stat{
+    padding:23px;
 
     display:flex;
     align-items:center;
-    gap:15px;
+    gap:13px;
 }
 
-.stat:not(:last-child){
-    border-right:1px solid rgba(34,211,238,.12);
+.creative-stat:not(:last-child){
+    border-right:
+        1px solid
+        rgba(37,216,245,.1);
 }
 
 .stat-icon{
-    min-width:42px;
+    width:42px;
     height:42px;
+
+    flex:0 0 42px;
 
     display:flex;
     align-items:center;
@@ -600,23 +828,30 @@ nav ul a:hover{
 
     border-radius:9px;
 
-    background:rgba(34,211,238,.08);
-
     color:var(--cyan);
 
-    font-size:20px;
-}
+    background:
+        rgba(37,216,245,.07);
 
-.stat strong{
-    display:block;
-    color:var(--cyan);
     font-size:18px;
 }
 
-.stat span{
+.creative-stat strong{
     display:block;
-    color:#8ea7b5;
-    font-size:11px;
+
+    color:#e9faff;
+
+    font-size:14px;
+}
+
+.creative-stat span{
+    display:block;
+
+    color:#809aa9;
+
+    font-size:9px;
+
+    margin-top:2px;
 }
 
 
@@ -625,90 +860,270 @@ nav ul a:hover{
 ========================================================= */
 
 .section-eyebrow{
+    display:flex;
+    align-items:center;
+    gap:8px;
+
     color:var(--cyan);
 
-    text-transform:uppercase;
+    font-size:9px;
+    font-weight:850;
 
     letter-spacing:2.5px;
 
-    font-size:10px;
-    font-weight:800;
+    text-transform:uppercase;
 
-    margin-bottom:7px;
+    margin-bottom:9px;
+}
+
+.section-eyebrow::before{
+    content:"";
+
+    width:25px;
+    height:1px;
+
+    background:var(--cyan);
 }
 
 .section-title{
-    font-size:36px;
-    line-height:1.15;
-    margin-bottom:12px;
+    font-size:
+        clamp(31px,4vw,43px);
+
+    line-height:1.1;
+
+    letter-spacing:-1.5px;
+
+    margin-bottom:13px;
 }
 
 .section-description{
-    color:#91a8b6;
-    max-width:700px;
-    margin-bottom:38px;
+    max-width:720px;
+
+    color:#8ea5b3;
+
+    font-size:13px;
+
+    margin-bottom:42px;
 }
 
 
 /* =========================================================
-   PORTFOLIO
+   FEATURED PROJECT
 ========================================================= */
 
 .portfolio{
     background:
         radial-gradient(
-            circle at 80% 30%,
-            rgba(0,168,255,.06),
-            transparent 30%
+            circle at 90% 25%,
+            rgba(59,130,246,.055),
+            transparent 27%
         ),
-        #020f19;
+
+        #020d16;
 }
 
-.project-grid{
+.featured-project{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:22px;
-}
 
-.project-card{
-    border:1px solid rgba(34,211,238,.22);
+    grid-template-columns:
+        1.18fr .82fr;
+
+    gap:0;
+
+    margin-bottom:25px;
+
+    border-radius:17px;
+
+    overflow:hidden;
+
+    border:
+        1px solid
+        rgba(37,216,245,.30);
 
     background:
         linear-gradient(
             145deg,
-            #061d2b,
-            #041520
+            #071d2b,
+            #03121c
         );
 
-    border-radius:14px;
-
-    overflow:hidden;
-
-    transition:.35s;
-}
-
-.project-card:hover{
-    transform:translateY(-8px);
-
-    border-color:rgba(34,211,238,.65);
-
     box-shadow:
-        0 22px 50px rgba(0,0,0,.35),
-        0 0 30px rgba(34,211,238,.05);
+        0 25px 70px
+        rgba(0,0,0,.28);
 }
 
-.project-video{
+.featured-video{
     position:relative;
+
+    padding:10px;
+
     background:#000;
-    padding:7px;
 }
 
-.project-video video{
+.featured-video video{
     display:block;
 
     width:100%;
+    height:100%;
+
+    min-height:400px;
+
+    object-fit:contain;
+
+    background:#000;
+
+    border-radius:10px;
+}
+
+.featured-badge{
+    position:absolute;
+
+    left:25px;
+    top:25px;
+
+    z-index:3;
+
+    padding:7px 11px;
+
+    border-radius:20px;
+
+    background:
+        rgba(2,13,22,.86);
+
+    border:
+        1px solid
+        rgba(37,216,245,.38);
+
+    color:var(--cyan);
+
+    font-size:8px;
+    font-weight:900;
+
+    letter-spacing:1.5px;
+
+    text-transform:uppercase;
+
+    backdrop-filter:blur(10px);
+}
+
+.featured-content{
+    padding:42px 35px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.project-type{
+    color:var(--cyan);
+
+    font-size:8px;
+    font-weight:850;
+
+    letter-spacing:1.7px;
+
+    text-transform:uppercase;
+}
+
+.featured-content h3{
+    font-size:27px;
+
+    line-height:1.2;
+
+    margin:
+        10px 0 14px;
+}
+
+.featured-content p{
+    color:#91a8b6;
+
+    font-size:12px;
+
+    line-height:1.8;
+
+    margin-bottom:22px;
+}
+
+.project-highlight{
+    margin-bottom:20px;
+
+    padding:13px 14px;
+
+    border-left:
+        2px solid var(--cyan);
+
+    background:
+        rgba(37,216,245,.035);
+
+    color:#b7cad3;
+
+    font-size:10px;
+}
+
+
+/* =========================================================
+   PROJECT GRID
+========================================================= */
+
+.project-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:20px;
+}
+
+.project-card{
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:14px;
+
+    border:
+        1px solid
+        rgba(37,216,245,.15);
+
+    background:
+        linear-gradient(
+            145deg,
+            #061b29,
+            #03131e
+        );
+
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+}
+
+.project-card:hover{
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(37,216,245,.48);
+
+    box-shadow:
+        0 22px 55px
+        rgba(0,0,0,.32);
+}
+
+.project-video{
+    background:#000;
+
+    padding:7px;
+
+    position:relative;
+}
+
+.project-video video{
+    width:100%;
 
     aspect-ratio:16/9;
+
+    display:block;
 
     object-fit:contain;
 
@@ -717,48 +1132,79 @@ nav ul a:hover{
     border-radius:8px;
 }
 
-.project-content{
-    padding:22px;
+.project-number{
+    position:absolute;
+
+    top:16px;
+    right:16px;
+
+    z-index:2;
+
+    width:29px;
+    height:29px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:
+        rgba(2,13,22,.8);
+
+    border:
+        1px solid
+        rgba(37,216,245,.24);
+
+    color:#bfeff8;
+
+    font-size:8px;
 }
 
-.project-type{
-    color:var(--cyan);
-
-    font-size:9px;
-    font-weight:800;
-
-    letter-spacing:1.8px;
-
-    text-transform:uppercase;
+.project-content{
+    padding:20px;
 }
 
 .project-content h3{
-    font-size:18px;
-    margin:7px 0 9px;
+    font-size:15px;
+
+    line-height:1.35;
+
+    margin:
+        7px 0 8px;
 }
 
 .project-content p{
-    color:#91a8b6;
-    font-size:12px;
-    margin-bottom:16px;
+    color:#879eac;
+
+    font-size:10px;
+
+    line-height:1.7;
+
+    margin-bottom:15px;
 }
 
 .tags{
     display:flex;
     flex-wrap:wrap;
-    gap:6px;
+    gap:5px;
 }
 
 .tag{
-    border:1px solid rgba(34,211,238,.25);
+    padding:4px 8px;
 
     border-radius:20px;
 
-    padding:5px 9px;
+    border:
+        1px solid
+        rgba(37,216,245,.18);
 
-    color:#a9eaf5;
+    color:#a9dfe9;
 
-    font-size:9px;
+    font-size:8px;
+
+    background:
+        rgba(37,216,245,.025);
 }
 
 
@@ -769,81 +1215,185 @@ nav ul a:hover{
 .services{
     background:
         radial-gradient(
-            circle at 15% 60%,
-            rgba(34,211,238,.06),
-            transparent 30%
+            circle at 12% 55%,
+            rgba(37,216,245,.055),
+            transparent 28%
         ),
-        #031725;
+
+        #03131f;
 }
 
 .services-grid{
     display:grid;
-    grid-template-columns:repeat(5,1fr);
+
+    grid-template-columns:
+        repeat(4,1fr);
+
     gap:16px;
 }
 
 .service{
-    min-height:235px;
+    position:relative;
 
-    padding:23px;
+    min-height:250px;
 
-    border-radius:13px;
+    padding:25px;
 
-    border:1px solid rgba(34,211,238,.17);
+    border-radius:14px;
+
+    overflow:hidden;
+
+    border:
+        1px solid
+        rgba(37,216,245,.14);
 
     background:
         linear-gradient(
             145deg,
-            #062131,
-            #041722
+            #071f2f,
+            #04141f
         );
 
-    transition:.35s;
+    transition:.35s ease;
 }
 
-.service:first-child{
-    border-color:var(--cyan);
+.service::after{
+    content:"";
+
+    position:absolute;
+
+    width:100px;
+    height:100px;
+
+    right:-45px;
+    bottom:-45px;
+
+    border-radius:50%;
+
+    background:
+        rgba(37,216,245,.035);
 }
 
 .service:hover{
-    transform:translateY(-7px);
+    transform:
+        translateY(-7px);
 
-    border-color:var(--cyan);
+    border-color:
+        rgba(37,216,245,.45);
 
     box-shadow:
-        0 18px 40px rgba(0,0,0,.25),
-        0 0 25px rgba(34,211,238,.06);
+        0 20px 45px
+        rgba(0,0,0,.25);
+}
+
+.service.featured-service{
+    border-color:
+        rgba(37,216,245,.42);
+
+    background:
+        linear-gradient(
+            145deg,
+            #082638,
+            #041722
+        );
 }
 
 .service-icon{
-    width:44px;
-    height:44px;
+    width:47px;
+    height:47px;
 
     display:flex;
     align-items:center;
     justify-content:center;
 
-    border-radius:9px;
+    border-radius:10px;
 
-    background:rgba(34,211,238,.08);
+    margin-bottom:20px;
 
-    border:1px solid rgba(34,211,238,.12);
+    background:
+        rgba(37,216,245,.07);
+
+    border:
+        1px solid
+        rgba(37,216,245,.13);
 
     color:var(--cyan);
 
-    font-size:21px;
-
-    margin-bottom:17px;
+    font-size:20px;
 }
 
 .service h3{
-    font-size:15px;
+    font-size:14px;
+
     margin-bottom:9px;
 }
 
 .service p{
-    color:#91a8b6;
-    font-size:11px;
+    color:#879fac;
+
+    font-size:10px;
+
+    line-height:1.75;
+}
+
+
+/* =========================================================
+   CREATIVE PROCESS
+========================================================= */
+
+.process{
+    background:#020d16;
+}
+
+.process-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:16px;
+}
+
+.process-card{
+    position:relative;
+
+    padding:27px 22px;
+
+    border-radius:13px;
+
+    border:
+        1px solid
+        rgba(37,216,245,.13);
+
+    background:
+        rgba(6,29,43,.55);
+}
+
+.process-number{
+    color:
+        rgba(37,216,245,.35);
+
+    font-size:32px;
+
+    font-weight:900;
+
+    line-height:1;
+
+    margin-bottom:17px;
+}
+
+.process-card h3{
+    font-size:13px;
+
+    margin-bottom:7px;
+}
+
+.process-card p{
+    color:#8199a7;
+
+    font-size:9px;
+
+    line-height:1.7;
 }
 
 
@@ -852,50 +1402,105 @@ nav ul a:hover{
 ========================================================= */
 
 .about{
-    background:#020f19;
+    background:
+        radial-gradient(
+            circle at 85% 50%,
+            rgba(59,130,246,.05),
+            transparent 30%
+        ),
+
+        #03131f;
 }
 
 .about-grid{
     display:grid;
-    grid-template-columns:1.15fr .85fr;
-    gap:50px;
+
+    grid-template-columns:
+        1.05fr .95fr;
+
+    gap:55px;
+
     align-items:center;
 }
 
 .about-text p{
-    color:#9bb0bd;
-    margin-bottom:16px;
+    color:#91a7b4;
+
+    font-size:12px;
+
+    line-height:1.85;
+
+    margin-bottom:15px;
+}
+
+.about-text strong{
+    color:#d7edf5;
 }
 
 .about-card{
     padding:30px;
 
-    border-radius:14px;
+    border-radius:15px;
+
+    border:
+        1px solid
+        rgba(37,216,245,.18);
 
     background:
         linear-gradient(
             145deg,
-            #062131,
-            #041722
+            #072030,
+            #04141f
         );
 
-    border:1px solid rgba(34,211,238,.20);
+    box-shadow:
+        0 25px 55px
+        rgba(0,0,0,.2);
 }
 
-.about-card h3{
-    margin-bottom:20px;
+.about-card-title{
+    color:#dff8ff;
+
+    font-size:14px;
+
+    margin-bottom:18px;
 }
 
 .about-item{
     display:flex;
-    gap:12px;
-    margin:15px 0;
+    align-items:center;
+    gap:11px;
 
-    color:#a7bac5;
-    font-size:13px;
+    padding:10px 0;
+
+    color:#9fb5c0;
+
+    font-size:10px;
+
+    border-bottom:
+        1px solid
+        rgba(37,216,245,.07);
+}
+
+.about-item:last-child{
+    border-bottom:none;
 }
 
 .about-check{
+    width:24px;
+    height:24px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    flex:0 0 24px;
+
+    border-radius:6px;
+
+    background:
+        rgba(37,216,245,.07);
+
     color:var(--cyan);
 }
 
@@ -905,37 +1510,44 @@ nav ul a:hover{
 ========================================================= */
 
 .tools{
-    background:#031725;
+    background:#020d16;
 }
 
 .tools-grid{
     display:flex;
+
     flex-wrap:wrap;
-    gap:12px;
+
+    gap:9px;
 }
 
 .tool{
-    padding:10px 15px;
+    padding:9px 14px;
 
-    border-radius:25px;
+    border-radius:30px;
 
-    border:1px solid rgba(34,211,238,.18);
+    border:
+        1px solid
+        rgba(37,216,245,.14);
 
-    background:#062131;
+    background:
+        rgba(6,29,43,.75);
 
-    color:#b4dce6;
+    color:#a9c1cc;
 
-    font-size:11px;
+    font-size:9px;
 
-    transition:.25s;
+    transition:.25s ease;
 }
 
 .tool:hover{
-    transform:translateY(-3px);
+    transform:
+        translateY(-3px);
 
-    border-color:var(--cyan);
+    color:#fff;
 
-    color:white;
+    border-color:
+        rgba(37,216,245,.45);
 }
 
 
@@ -944,43 +1556,98 @@ nav ul a:hover{
 ========================================================= */
 
 .contact{
-    background:#020f19;
+    background:#03131f;
 }
 
 .contact-box{
-    padding:65px 30px;
+    position:relative;
+
+    overflow:hidden;
 
     text-align:center;
 
-    border-radius:18px;
+    padding:
+        75px 35px;
 
-    border:1px solid rgba(34,211,238,.25);
+    border-radius:20px;
+
+    border:
+        1px solid
+        rgba(37,216,245,.21);
 
     background:
         radial-gradient(
             circle at 50% 0%,
-            rgba(34,211,238,.12),
-            transparent 40%
+            rgba(37,216,245,.12),
+            transparent 42%
         ),
 
         linear-gradient(
             145deg,
-            #062131,
-            #041722
+            #071f2e,
+            #04131e
         );
 }
 
+.contact-box::before{
+    content:"";
+
+    position:absolute;
+
+    width:400px;
+    height:400px;
+
+    left:50%;
+    top:-330px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(37,216,245,.13);
+}
+
+.contact-eyebrow{
+    justify-content:center;
+}
+
+.contact-eyebrow::before{
+    display:none;
+}
+
 .contact-box h2{
-    font-size:38px;
-    margin-bottom:12px;
+    font-size:
+        clamp(30px,4vw,45px);
+
+    letter-spacing:-1.5px;
+
+    line-height:1.1;
+
+    margin-bottom:15px;
 }
 
 .contact-box p{
-    color:#96aebb;
+    max-width:660px;
 
-    max-width:650px;
+    margin:
+        0 auto 25px;
 
-    margin:0 auto 25px;
+    color:#8fa7b4;
+
+    font-size:12px;
+}
+
+.contact-buttons{
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:12px;
 }
 
 
@@ -989,15 +1656,48 @@ nav ul a:hover{
 ========================================================= */
 
 footer{
-    padding:27px;
+    padding:28px 20px;
 
     text-align:center;
 
-    border-top:1px solid rgba(34,211,238,.10);
+    color:#647f8d;
 
-    color:#718c9a;
+    font-size:9px;
 
-    font-size:11px;
+    letter-spacing:.4px;
+
+    border-top:
+        1px solid
+        rgba(37,216,245,.07);
+
+    background:#020912;
+}
+
+footer strong{
+    color:#a8c5d0;
+}
+
+
+/* =========================================================
+   REVEAL ANIMATION
+========================================================= */
+
+.reveal{
+    opacity:0;
+
+    transform:
+        translateY(25px);
+
+    transition:
+        opacity .7s ease,
+        transform .7s ease;
+}
+
+.reveal.active{
+    opacity:1;
+
+    transform:
+        translateY(0);
 }
 
 
@@ -1007,31 +1707,41 @@ footer{
 
 @media(max-width:1100px){
 
-    .creative-note{
-        right:0;
+    .float-card{
+        display:none;
     }
 
     .hero-quote{
         right:0;
     }
 
+    .services-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
 }
 
 
-@media(max-width:1000px){
+@media(max-width:950px){
+
+    .hero{
+        min-height:auto;
+    }
 
     .hero-inner{
         grid-template-columns:1fr;
+
         text-align:center;
-        padding:70px 0;
+
+        padding-top:30px;
     }
 
-    .hero-description,
-    .hero h2{
-        margin-left:auto;
-        margin-right:auto;
+    .hero-description{
+        margin:auto;
     }
 
+    .hero-role,
     .hero-buttons,
     .specialties{
         justify-content:center;
@@ -1042,33 +1752,47 @@ footer{
     }
 
     .hero-photo{
-        max-width:380px;
+        max-width:390px;
     }
 
-    .creative-note,
     .hero-quote{
         display:none;
     }
 
-    .stats-grid{
-        grid-template-columns:repeat(2,1fr);
+    .creative-grid{
+        grid-template-columns:
+            repeat(2,1fr);
     }
 
-    .stat:nth-child(2){
+    .creative-stat:nth-child(2){
         border-right:none;
     }
 
-    .stat:nth-child(1),
-    .stat:nth-child(2){
-        border-bottom:1px solid rgba(34,211,238,.12);
+    .creative-stat:nth-child(1),
+    .creative-stat:nth-child(2){
+        border-bottom:
+            1px solid
+            rgba(37,216,245,.1);
+    }
+
+    .featured-project{
+        grid-template-columns:1fr;
+    }
+
+    .featured-video video{
+        min-height:auto;
+
+        aspect-ratio:16/9;
     }
 
     .project-grid{
-        grid-template-columns:1fr 1fr;
+        grid-template-columns:
+            repeat(2,1fr);
     }
 
-    .services-grid{
-        grid-template-columns:repeat(2,1fr);
+    .process-grid{
+        grid-template-columns:
+            repeat(2,1fr);
     }
 
     .about-grid{
@@ -1080,20 +1804,41 @@ footer{
 
 @media(max-width:700px){
 
-    nav ul{
+    section{
+        padding:72px 0;
+    }
+
+    .nav-inner{
+        min-height:65px;
+    }
+
+    .nav-links li:not(:last-child){
         display:none;
     }
 
-    section{
-        padding:65px 0;
+    .logo{
+        font-size:17px;
+    }
+
+    .nav-contact{
+        font-size:9px!important;
+    }
+
+    .hero{
+        padding-top:50px;
     }
 
     .hero h1{
-        font-size:56px;
+        font-size:53px;
+        letter-spacing:-3px;
     }
 
-    .hero h2{
-        font-size:19px;
+    .hero-role{
+        font-size:10px;
+    }
+
+    .hero-description{
+        font-size:12px;
     }
 
     .hero-visual{
@@ -1107,6 +1852,8 @@ footer{
     .hero-ring{
         width:300px;
         height:300px;
+
+        bottom:35px;
     }
 
     .hero-ring::before{
@@ -1114,30 +1861,77 @@ footer{
         height:235px;
     }
 
-    .stats{
+    .creative-bar{
         margin-top:0;
     }
 
-    .stats-grid{
+    .creative-grid{
         grid-template-columns:1fr;
     }
 
-    .stat{
+    .creative-stat{
         border-right:none!important;
-        border-bottom:1px solid rgba(34,211,238,.12);
+
+        border-bottom:
+            1px solid
+            rgba(37,216,245,.1);
+    }
+
+    .creative-stat:last-child{
+        border-bottom:none;
     }
 
     .project-grid,
-    .services-grid{
+    .services-grid,
+    .process-grid{
         grid-template-columns:1fr;
     }
 
-    .section-title{
-        font-size:30px;
+    .featured-content{
+        padding:27px 22px;
     }
 
-    .contact-box h2{
-        font-size:30px;
+    .featured-content h3{
+        font-size:22px;
+    }
+
+    .section-title{
+        font-size:31px;
+    }
+
+    .contact-box{
+        padding:
+            55px 20px;
+    }
+
+}
+
+
+@media(max-width:430px){
+
+    .hero h1{
+        font-size:45px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+    }
+
+    .btn{
+        width:100%;
+    }
+
+    .hero-visual{
+        min-height:370px;
+    }
+
+    .hero-photo{
+        max-width:275px;
+    }
+
+    .hero-ring{
+        width:270px;
+        height:270px;
     }
 
 }
@@ -1150,26 +1944,26 @@ footer{
 <body>
 
 
-<!-- ======================================================
+<!-- =========================================================
      NAVIGATION
-====================================================== -->
+========================================================= -->
 
 <nav>
 
 <div class="nav-inner">
 
-    <div class="logo">
+    <a href="#home" class="logo">
         LENIEL<span>.</span>
-    </div>
+    </a>
 
-    <ul>
+    <ul class="nav-links">
 
         <li>
             <a href="#home">Home</a>
         </li>
 
         <li>
-            <a href="#portfolio">Portfolio</a>
+            <a href="#portfolio">Work</a>
         </li>
 
         <li>
@@ -1185,7 +1979,10 @@ footer{
         </li>
 
         <li>
-            <a href="#contact" class="nav-contact">
+            <a
+                href="#contact"
+                class="nav-contact"
+            >
                 Let's Connect →
             </a>
         </li>
@@ -1197,26 +1994,28 @@ footer{
 </nav>
 
 
-<!-- ======================================================
+<!-- =========================================================
      HERO
-====================================================== -->
+========================================================= -->
 
 <section class="hero" id="home">
+
+<div class="hero-glow"></div>
+
+<div class="container">
 
 <div class="hero-inner">
 
 
-    <!-- LEFT SIDE -->
+    <!-- LEFT -->
 
     <div>
 
         <div class="hero-badge">
 
-            AI VIDEO CREATOR
+            <span class="badge-dot"></span>
 
-            <span class="hero-badge-dot"></span>
-
-            DIGITAL CONTENT CREATOR
+            AI-POWERED CREATIVE PRODUCTION
 
         </div>
 
@@ -1225,22 +2024,41 @@ footer{
 
             Leniel
 
-            <span>Bayoran</span>
+            <span>
+                Bayoran
+            </span>
 
         </h1>
 
 
-        <h2>
-            Turning Ideas Into Engaging Visual Stories.
-        </h2>
+        <div class="hero-role">
+
+            <span>AI VIDEO CREATOR</span>
+
+            <span class="role-divider">•</span>
+
+            <span>VIDEO EDITOR</span>
+
+            <span class="role-divider">•</span>
+
+            <span>DIGITAL CONTENT CREATOR</span>
+
+        </div>
 
 
         <p class="hero-description">
 
-            I create AI-assisted promotional videos,
-            product commercials, social media content
-            and digital visuals by combining creative
-            prompting, AI generation and video editing.
+            I transform ideas into
+
+            <strong>
+                cinematic AI-powered advertisements,
+                promotional videos and engaging digital content.
+            </strong>
+
+            My workflow combines creative direction,
+            AI generation, prompt engineering and
+            video editing to create visuals designed
+            to capture attention and tell a story.
 
         </p>
 
@@ -1251,21 +2069,20 @@ footer{
                 href="#portfolio"
                 class="btn btn-primary"
             >
-                ▶ &nbsp; Explore My AI Work
+                ▶ View My Creative Work
             </a>
 
             <a
                 href="#contact"
                 class="btn btn-outline"
             >
-                Let's Create Something →
+                Let's Work Together →
             </a>
 
         </div>
 
 
         <div class="specialties">
-
 
             <div class="specialty">
 
@@ -1292,10 +2109,21 @@ footer{
             <div class="specialty">
 
                 <span class="specialty-icon">
+                    ✦
+                </span>
+
+                Product Ads
+
+            </div>
+
+
+            <div class="specialty">
+
+                <span class="specialty-icon">
                     ◉
                 </span>
 
-                Social Media
+                Social Content
 
             </div>
 
@@ -1306,22 +2134,18 @@ footer{
                     ◇
                 </span>
 
-                Product Ads
+                Prompt Design
 
             </div>
 
-
         </div>
-
 
     </div>
 
 
-
-    <!-- RIGHT SIDE -->
+    <!-- RIGHT -->
 
     <div class="hero-visual">
-
 
         <div class="hero-ring"></div>
 
@@ -1333,109 +2157,98 @@ footer{
         >
 
 
+        <div class="float-card one">
 
-        <!-- CREATE EDIT INNOVATE -->
-
-        <div class="creative-note">
-
-
-            <div class="creative-card">
-
-                <div class="creative-icon">
-                    💡
-                </div>
-
-                <div>
-
-                    <strong>
-                        CREATE
-                    </strong>
-
-                    <small>
-                        Turn ideas into visuals
-                    </small>
-
-                </div>
-
+            <div class="float-icon">
+                💡
             </div>
 
+            <div>
 
+                <strong>
+                    CREATE
+                </strong>
 
-            <div class="creative-card">
-
-                <div class="creative-icon">
-                    🎬
-                </div>
-
-                <div>
-
-                    <strong>
-                        EDIT
-                    </strong>
-
-                    <small>
-                        Polish with purpose
-                    </small>
-
-                </div>
+                <small>
+                    Ideas into visual concepts
+                </small>
 
             </div>
-
-
-
-            <div class="creative-card">
-
-                <div class="creative-icon">
-                    🚀
-                </div>
-
-                <div>
-
-                    <strong>
-                        INNOVATE
-                    </strong>
-
-                    <small>
-                        Bring ideas to life
-                    </small>
-
-                </div>
-
-            </div>
-
 
         </div>
 
+
+        <div class="float-card two">
+
+            <div class="float-icon">
+                🎬
+            </div>
+
+            <div>
+
+                <strong>
+                    EDIT
+                </strong>
+
+                <small>
+                    Shape every frame
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="float-card three">
+
+            <div class="float-icon">
+                ✦
+            </div>
+
+            <div>
+
+                <strong>
+                    INNOVATE
+                </strong>
+
+                <small>
+                    Powered by AI creativity
+                </small>
+
+            </div>
+
+        </div>
 
 
         <div class="hero-quote">
 
-            “Good ideas deserve
-            great visuals.”
+            “Ideas become powerful
+            when they become visual.”
 
         </div>
-
 
     </div>
 
 
 </div>
 
+</div>
+
 </section>
 
 
-<!-- ======================================================
-     CREATIVE STATS
-====================================================== -->
+<!-- =========================================================
+     CREATIVE BAR
+========================================================= -->
 
-<div class="stats">
+<div class="creative-bar">
 
 <div class="container">
 
-<div class="stats-grid">
+<div class="creative-grid">
 
 
-    <div class="stat">
+    <div class="creative-stat">
 
         <div class="stat-icon">
             ▶
@@ -1444,11 +2257,11 @@ footer{
         <div>
 
             <strong>
-                5+
+                AI Video Creation
             </strong>
 
             <span>
-                Video Portfolio Projects
+                Cinematic visual generation
             </span>
 
         </div>
@@ -1456,8 +2269,28 @@ footer{
     </div>
 
 
+    <div class="creative-stat">
 
-    <div class="stat">
+        <div class="stat-icon">
+            ✂
+        </div>
+
+        <div>
+
+            <strong>
+                Video Editing
+            </strong>
+
+            <span>
+                Clean & engaging production
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="creative-stat">
 
         <div class="stat-icon">
             ✦
@@ -1466,11 +2299,11 @@ footer{
         <div>
 
             <strong>
-                AI + Editing
+                AI + Creativity
             </strong>
 
             <span>
-                Creative Production
+                Modern creative workflow
             </span>
 
         </div>
@@ -1478,30 +2311,7 @@ footer{
     </div>
 
 
-
-    <div class="stat">
-
-        <div class="stat-icon">
-            ✣
-        </div>
-
-        <div>
-
-            <strong>
-                AI-Powered
-            </strong>
-
-            <span>
-                Creative Workflow
-            </span>
-
-        </div>
-
-    </div>
-
-
-
-    <div class="stat">
+    <div class="creative-stat">
 
         <div class="stat-icon">
             ◇
@@ -1510,11 +2320,11 @@ footer{
         <div>
 
             <strong>
-                Open
+                Open to Opportunities
             </strong>
 
             <span>
-                For Opportunities
+                Remote creative collaboration
             </span>
 
         </div>
@@ -1529,9 +2339,9 @@ footer{
 </div>
 
 
-<!-- ======================================================
+<!-- =========================================================
      PORTFOLIO
-====================================================== -->
+========================================================= -->
 
 <section
     class="portfolio"
@@ -1542,33 +2352,140 @@ footer{
 
 
     <div class="section-eyebrow">
-        Featured Work
+        Selected Work
     </div>
 
 
     <h2 class="section-title">
-        Selected Projects
+        Creative Portfolio
     </h2>
 
 
     <p class="section-description">
 
-        A showcase of my AI-assisted video creations,
-        product advertisements and digital content projects.
+        A selection of AI-assisted advertisements,
+        cinematic product videos and social media
+        content created through AI generation,
+        creative prompting and video editing.
 
     </p>
 
 
+    <!-- =====================================================
+         FEATURED PROJECT - FACE TRIAL
+    ====================================================== -->
+
+    <article
+        class="featured-project reveal"
+    >
+
+
+        <div class="featured-video">
+
+            <div class="featured-badge">
+                ★ Latest Featured Project
+            </div>
+
+            <video
+                controls
+                preload="metadata"
+                playsinline
+            >
+
+                <source
+                    src="Face trial.mp4"
+                    type="video/mp4"
+                >
+
+                Your browser does not support HTML video.
+
+            </video>
+
+        </div>
+
+
+        <div class="featured-content">
+
+            <span class="project-type">
+                Beauty • Skincare • AI Commercial
+            </span>
+
+
+            <h3>
+                Beauty & Skincare
+                AI Commercial
+            </h3>
+
+
+            <p>
+
+                A cinematic beauty-focused promotional
+                video demonstrating realistic AI character
+                generation, product storytelling,
+                visual continuity and polished editing.
+
+            </p>
+
+
+            <div class="project-highlight">
+
+                Focus:
+                realistic character continuity,
+                natural product interaction,
+                emotional storytelling and
+                commercial-style visual presentation.
+
+            </div>
+
+
+            <div class="tags">
+
+                <span class="tag">
+                    AI Video
+                </span>
+
+                <span class="tag">
+                    Beauty Advertising
+                </span>
+
+                <span class="tag">
+                    Cinematic
+                </span>
+
+                <span class="tag">
+                    Video Editing
+                </span>
+
+                <span class="tag">
+                    Visual Storytelling
+                </span>
+
+            </div>
+
+        </div>
+
+
+    </article>
+
+
+    <!-- =====================================================
+         OTHER PROJECTS
+    ====================================================== -->
 
     <div class="project-grid">
 
 
-        <!-- PROJECT 1 -->
+        <!-- PROJECT 2 -->
 
-        <article class="project-card">
-
+        <article
+            class="project-card reveal"
+        >
 
             <div class="project-video">
+
+                <div class="project-number">
+                    02
+                </div>
 
                 <video
                     controls
@@ -1577,7 +2494,7 @@ footer{
                 >
 
                     <source
-                        src="Parent_preparing_milk_for_toddler_20260914171510.mp4"
+                        src="Luxury_watch_commercial_generation_1080p_20260915213903.mp4"
                         type="video/mp4"
                     >
 
@@ -1591,18 +2508,20 @@ footer{
             <div class="project-content">
 
                 <span class="project-type">
-                    Brand Promotion
+                    Luxury Product Advertising
                 </span>
 
                 <h3>
-                    Parent & Child Milk Advertisement
+                    Luxury Watch
+                    Cinematic Commercial
                 </h3>
 
                 <p>
 
-                    AI-assisted promotional video combining
-                    emotional storytelling, realistic visual
-                    generation and professional video editing.
+                    Premium AI-assisted product
+                    commercial built around cinematic
+                    lighting, luxury presentation and
+                    polished visual storytelling.
 
                 </p>
 
@@ -1614,103 +2533,35 @@ footer{
                     </span>
 
                     <span class="tag">
-                        Google Flow
+                        Luxury
                     </span>
 
                     <span class="tag">
-                        Video Editing
+                        Commercial
                     </span>
 
                     <span class="tag">
-                        Advertising
+                        Editing
                     </span>
 
                 </div>
 
             </div>
 
-
         </article>
-
-
-
-        <!-- PROJECT 2 -->
-
-        <article class="project-card">
-
-
-            <div class="project-video">
-
-                <video
-                    controls
-                    preload="metadata"
-                    playsinline
-                >
-
-                    <source
-                        src="202609142159.mp4"
-                        type="video/mp4"
-                    >
-
-                    Your browser does not support HTML video.
-
-                </video>
-
-            </div>
-
-
-            <div class="project-content">
-
-                <span class="project-type">
-                    Social Media Advertisement
-                </span>
-
-                <h3>
-                    AI Product Promotional Video
-                </h3>
-
-                <p>
-
-                    Short-form promotional content created
-                    using AI-assisted visual generation,
-                    prompt engineering and video editing.
-
-                </p>
-
-
-                <div class="tags">
-
-                    <span class="tag">
-                        AI Content
-                    </span>
-
-                    <span class="tag">
-                        Social Media
-                    </span>
-
-                    <span class="tag">
-                        Prompt Engineering
-                    </span>
-
-                    <span class="tag">
-                        Short Form
-                    </span>
-
-                </div>
-
-            </div>
-
-
-        </article>
-
 
 
         <!-- PROJECT 3 -->
 
-        <article class="project-card">
-
+        <article
+            class="project-card reveal"
+        >
 
             <div class="project-video">
+
+                <div class="project-number">
+                    03
+                </div>
 
                 <video
                     controls
@@ -1737,14 +2588,88 @@ footer{
                 </span>
 
                 <h3>
-                    Electronics Store Commercial
+                    Electronics Store
+                    Commercial
                 </h3>
 
                 <p>
 
-                    Cinematic AI-assisted commercial demonstrating
-                    promotional storytelling, realistic scene creation
-                    and professional video editing.
+                    AI-assisted business advertisement
+                    demonstrating realistic scene
+                    generation, commercial pacing and
+                    promotional video editing.
+
+                </p>
+
+
+                <div class="tags">
+
+                    <span class="tag">
+                        Commercial
+                    </span>
+
+                    <span class="tag">
+                        AI Video
+                    </span>
+
+                    <span class="tag">
+                        Product Promotion
+                    </span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- PROJECT 4 -->
+
+        <article
+            class="project-card reveal"
+        >
+
+            <div class="project-video">
+
+                <div class="project-number">
+                    04
+                </div>
+
+                <video
+                    controls
+                    preload="metadata"
+                    playsinline
+                >
+
+                    <source
+                        src="Parent_preparing_milk_for_toddler_20260914171510.mp4"
+                        type="video/mp4"
+                    >
+
+                    Your browser does not support HTML video.
+
+                </video>
+
+            </div>
+
+
+            <div class="project-content">
+
+                <span class="project-type">
+                    Family Brand Promotion
+                </span>
+
+                <h3>
+                    Parent & Child
+                    Product Advertisement
+                </h3>
+
+                <p>
+
+                    Warm family-focused promotional
+                    content combining AI-assisted
+                    generation, emotional storytelling
+                    and commercial editing.
 
                 </p>
 
@@ -1756,30 +2681,31 @@ footer{
                     </span>
 
                     <span class="tag">
-                        Commercial
+                        Brand Story
                     </span>
 
                     <span class="tag">
-                        Google Flow
-                    </span>
-
-                    <span class="tag">
-                        Video Editing
+                        Advertising
                     </span>
 
                 </div>
 
             </div>
 
-
         </article>
 
 
-        <!-- PROJECT 4 -->
+        <!-- PROJECT 5 -->
 
-        <article class="project-card">
+        <article
+            class="project-card reveal"
+        >
 
             <div class="project-video">
+
+                <div class="project-number">
+                    05
+                </div>
 
                 <video
                     controls
@@ -1798,30 +2724,32 @@ footer{
 
             </div>
 
+
             <div class="project-content">
 
                 <span class="project-type">
-                    Health & Social Media Campaign
+                    Social Media Campaign
                 </span>
 
                 <h3>
-                    AI Kids Health & Nutrition Campaign
+                    Kids Health &
+                    Nutrition Campaign
                 </h3>
 
                 <p>
-                    AI-assisted promotional video featuring children and
-                    healthy lifestyle messaging, created through realistic
-                    AI scene generation, visual storytelling and video editing.
+
+                    AI-assisted campaign content
+                    featuring healthy lifestyle
+                    messaging, visual storytelling
+                    and engaging social media editing.
+
                 </p>
+
 
                 <div class="tags">
 
                     <span class="tag">
-                        AI Video
-                    </span>
-
-                    <span class="tag">
-                        Healthy Lifestyle
+                        AI Content
                     </span>
 
                     <span class="tag">
@@ -1829,7 +2757,7 @@ footer{
                     </span>
 
                     <span class="tag">
-                        Video Editing
+                        Storytelling
                     </span>
 
                 </div>
@@ -1839,11 +2767,17 @@ footer{
         </article>
 
 
-        <!-- PROJECT 5 -->
+        <!-- PROJECT 6 -->
 
-        <article class="project-card">
+        <article
+            class="project-card reveal"
+        >
 
             <div class="project-video">
+
+                <div class="project-number">
+                    06
+                </div>
 
                 <video
                     controls
@@ -1852,7 +2786,7 @@ footer{
                 >
 
                     <source
-                        src="Luxury_watch_commercial_generation_1080p_20260915213903.mp4"
+                        src="202609142159.mp4"
                         type="video/mp4"
                     >
 
@@ -1866,36 +2800,36 @@ footer{
             <div class="project-content">
 
                 <span class="project-type">
-                    Luxury Product Commercial
+                    Short-Form Advertising
                 </span>
 
                 <h3>
-                    Luxury Watch Cinematic Commercial
+                    AI Product
+                    Promotional Video
                 </h3>
 
                 <p>
-                    AI-assisted luxury watch advertisement featuring
-                    cinematic product storytelling, realistic visual
-                    generation and professional video editing.
+
+                    Short-form promotional content
+                    combining AI-generated visuals,
+                    prompt engineering and modern
+                    social media editing.
+
                 </p>
 
 
                 <div class="tags">
 
                     <span class="tag">
-                        AI Video
+                        Short Form
                     </span>
 
                     <span class="tag">
-                        Luxury Advertising
+                        AI Content
                     </span>
 
                     <span class="tag">
-                        Cinematic
-                    </span>
-
-                    <span class="tag">
-                        Video Editing
+                        Social Media
                     </span>
 
                 </div>
@@ -1907,14 +2841,15 @@ footer{
 
     </div>
 
+
 </div>
 
 </section>
 
 
-<!-- ======================================================
+<!-- =========================================================
      SERVICES
-====================================================== -->
+========================================================= -->
 
 <section
     class="services"
@@ -1925,30 +2860,30 @@ footer{
 
 
     <div class="section-eyebrow">
-        What I Can Do
+        Creative Services
     </div>
 
 
     <h2 class="section-title">
-        Services I Offer
+        What I Can Create
     </h2>
 
 
     <p class="section-description">
 
-        Creative and reliable digital solutions for
-        brands, businesses and personal projects.
+        Creative digital production for brands,
+        businesses, social media campaigns
+        and online projects.
 
     </p>
-
 
 
     <div class="services-grid">
 
 
-        <!-- SERVICE 1 -->
-
-        <div class="service">
+        <div
+            class="service featured-service reveal"
+        >
 
             <div class="service-icon">
                 ▶
@@ -1960,19 +2895,19 @@ footer{
 
             <p>
 
-                AI-assisted promotional videos for
-                products, social media, digital campaigns
-                and brand storytelling.
+                AI-assisted commercials,
+                promotional videos,
+                product advertisements
+                and visual stories built
+                around realistic generation
+                and creative direction.
 
             </p>
 
         </div>
 
 
-
-        <!-- SERVICE 2 -->
-
-        <div class="service">
+        <div class="service reveal">
 
             <div class="service-icon">
                 ✂
@@ -1984,19 +2919,42 @@ footer{
 
             <p>
 
-                Professional editing for Reels,
-                TikTok, YouTube, product commercials
-                and promotional videos.
+                Editing for advertisements,
+                Reels, TikTok, YouTube,
+                product videos and
+                short-form social media
+                content.
 
             </p>
 
         </div>
 
 
+        <div class="service reveal">
 
-        <!-- SERVICE 3 -->
+            <div class="service-icon">
+                ✦
+            </div>
 
-        <div class="service">
+            <h3>
+                AI Prompt Design
+            </h3>
+
+            <p>
+
+                Detailed visual and video
+                prompts designed for
+                realistic characters,
+                consistent scenes,
+                camera direction and
+                cinematic results.
+
+            </p>
+
+        </div>
+
+
+        <div class="service reveal">
 
             <div class="service-icon">
                 ◉
@@ -2008,57 +2966,12 @@ footer{
 
             <p>
 
-                Engaging visuals, promotional concepts,
-                captions and content ideas designed
-                for modern social platforms.
-
-            </p>
-
-        </div>
-
-
-
-        <!-- SERVICE 4 -->
-
-        <div class="service">
-
-            <div class="service-icon">
-                ✦
-            </div>
-
-            <h3>
-                Prompt Engineering
-            </h3>
-
-            <p>
-
-                Detailed AI prompts designed to create
-                consistent, realistic and high-quality
-                visual and video results.
-
-            </p>
-
-        </div>
-
-
-
-        <!-- SERVICE 5 -->
-
-        <div class="service">
-
-            <div class="service-icon">
-                ▱
-            </div>
-
-            <h3>
-                Virtual Assistance
-            </h3>
-
-            <p>
-
-                Administrative support, online research,
-                data organization, documentation and
-                task management.
+                Promotional concepts,
+                visual content and
+                short-form creative assets
+                designed to capture
+                attention across modern
+                social platforms.
 
             </p>
 
@@ -2067,14 +2980,139 @@ footer{
 
     </div>
 
+
 </div>
 
 </section>
 
 
-<!-- ======================================================
+<!-- =========================================================
+     CREATIVE PROCESS
+========================================================= -->
+
+<section class="process">
+
+<div class="container">
+
+
+    <div class="section-eyebrow">
+        My Workflow
+    </div>
+
+
+    <h2 class="section-title">
+        From Idea to Final Video
+    </h2>
+
+
+    <p class="section-description">
+
+        A structured creative process that combines
+        ideas, AI technology and human editing.
+
+    </p>
+
+
+    <div class="process-grid">
+
+
+        <div class="process-card reveal">
+
+            <div class="process-number">
+                01
+            </div>
+
+            <h3>
+                Concept
+            </h3>
+
+            <p>
+
+                Understand the product,
+                audience and story before
+                defining the creative direction.
+
+            </p>
+
+        </div>
+
+
+        <div class="process-card reveal">
+
+            <div class="process-number">
+                02
+            </div>
+
+            <h3>
+                Prompt
+            </h3>
+
+            <p>
+
+                Build detailed prompts for
+                character consistency,
+                lighting, camera movement,
+                realism and scene continuity.
+
+            </p>
+
+        </div>
+
+
+        <div class="process-card reveal">
+
+            <div class="process-number">
+                03
+            </div>
+
+            <h3>
+                Generate
+            </h3>
+
+            <p>
+
+                Produce AI-assisted visuals
+                and video scenes while
+                maintaining the intended
+                creative direction.
+
+            </p>
+
+        </div>
+
+
+        <div class="process-card reveal">
+
+            <div class="process-number">
+                04
+            </div>
+
+            <h3>
+                Edit & Polish
+            </h3>
+
+            <p>
+
+                Refine pacing, transitions,
+                music, text and visual flow
+                into a polished final piece.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
      ABOUT
-====================================================== -->
+========================================================= -->
 
 <section
     class="about"
@@ -2082,7 +3120,6 @@ footer{
 >
 
 <div class="container">
-
 
 <div class="about-grid">
 
@@ -2098,7 +3135,7 @@ footer{
         <h2 class="section-title">
 
             Creativity Meets
-            Digital Technology.
+            AI Technology.
 
         </h2>
 
@@ -2108,38 +3145,52 @@ footer{
 
             <p>
 
-                I'm a developing AI video creator and digital
-                content creator focused on creating short-form
-                promotional videos, product advertisements,
-                social media content and visual storytelling.
+                I'm <strong>Leniel Bayoran</strong>,
+                an emerging AI Video Creator,
+                Video Editor and Digital Content
+                Creator focused on producing
+                engaging promotional content
+                and visual stories.
 
             </p>
 
 
             <p>
 
-                My creative workflow combines concept development,
-                prompt engineering, AI-assisted image and video
-                generation, editing and digital storytelling.
+                I enjoy transforming simple
+                concepts into cinematic
+                advertisements by combining
+                <strong>
+                    creative prompting,
+                    AI-assisted image and video
+                    generation, visual storytelling
+                    and editing.
+                </strong>
 
             </p>
 
 
             <p>
 
-                Alongside my creative work, I also bring professional
-                experience in administrative support, digital document
-                processing, client communication, research, records
-                management and organizational work.
+                I continue to develop my skills
+                through hands-on creative projects,
+                experimenting with realistic AI
+                generation, character continuity,
+                commercial storytelling and
+                short-form content production.
 
             </p>
 
 
             <p>
 
-                This combination allows me to approach projects with
-                both creativity and organization—from the initial
-                concept to the final polished content.
+                Alongside creative production,
+                I also bring experience in
+                administrative support,
+                documentation, online research,
+                organization and digital workflows,
+                giving me a structured approach
+                to every project.
 
             </p>
 
@@ -2150,13 +3201,12 @@ footer{
     </div>
 
 
+    <div class="about-card reveal">
 
-    <div class="about-card">
 
-
-        <h3>
+        <div class="about-card-title">
             Creative Focus
-        </h3>
+        </div>
 
 
         <div class="about-item">
@@ -2166,6 +3216,17 @@ footer{
             </span>
 
             AI-Assisted Video Creation
+
+        </div>
+
+
+        <div class="about-item">
+
+            <span class="about-check">
+                ✓
+            </span>
+
+            Cinematic Product Advertising
 
         </div>
 
@@ -2187,7 +3248,7 @@ footer{
                 ✓
             </span>
 
-            Product & Brand Advertisements
+            Character & Scene Continuity
 
         </div>
 
@@ -2198,7 +3259,18 @@ footer{
                 ✓
             </span>
 
-            Prompt Engineering
+            AI Prompt Engineering
+
+        </div>
+
+
+        <div class="about-item">
+
+            <span class="about-check">
+                ✓
+            </span>
+
+            Video Editing & Storytelling
 
         </div>
 
@@ -2220,18 +3292,7 @@ footer{
                 ✓
             </span>
 
-            Video Editing
-
-        </div>
-
-
-        <div class="about-item">
-
-            <span class="about-check">
-                ✓
-            </span>
-
-            Virtual & Administrative Support
+            Administrative & Virtual Support
 
         </div>
 
@@ -2246,9 +3307,9 @@ footer{
 </section>
 
 
-<!-- ======================================================
+<!-- =========================================================
      TOOLS & SKILLS
-====================================================== -->
+========================================================= -->
 
 <section
     class="tools"
@@ -2270,12 +3331,12 @@ footer{
 
     <p class="section-description">
 
-        Combining creativity, AI tools and digital
-        production techniques to create engaging
-        visual content.
+        Combining AI technology,
+        creative direction and digital
+        production techniques to create
+        engaging visual content.
 
     </p>
-
 
 
     <div class="tools-grid">
@@ -2291,6 +3352,10 @@ footer{
 
         <span class="tool">
             Google Flow
+        </span>
+
+        <span class="tool">
+            AI Video Generation
         </span>
 
         <span class="tool">
@@ -2314,7 +3379,7 @@ footer{
         </span>
 
         <span class="tool">
-            Social Media Content
+            Visual Storytelling
         </span>
 
         <span class="tool">
@@ -2322,7 +3387,7 @@ footer{
         </span>
 
         <span class="tool">
-            Visual Storytelling
+            Social Media Content
         </span>
 
         <span class="tool">
@@ -2330,15 +3395,15 @@ footer{
         </span>
 
         <span class="tool">
-            Virtual Assistance
-        </span>
-
-        <span class="tool">
-            Administrative Support
+            Creative Direction
         </span>
 
         <span class="tool">
             Online Research
+        </span>
+
+        <span class="tool">
+            Administrative Support
         </span>
 
         <span class="tool">
@@ -2354,9 +3419,9 @@ footer{
 </section>
 
 
-<!-- ======================================================
+<!-- =========================================================
      CONTACT
-====================================================== -->
+========================================================= -->
 
 <section
     class="contact"
@@ -2366,41 +3431,46 @@ footer{
 <div class="container">
 
 
-    <div class="contact-box">
+    <div class="contact-box reveal">
 
 
-        <div class="section-eyebrow">
+        <div
+            class="
+                section-eyebrow
+                contact-eyebrow
+            "
+        >
             Let's Create
         </div>
 
 
         <h2>
-            Have an Idea? Let's Turn It Into Content.
+
+            Have an Idea?
+            Let's Bring It to Life.
+
         </h2>
 
 
         <p>
 
-            I'm open to opportunities in AI video creation,
-            digital content production, video editing,
-            social media content and creative virtual assistance.
+            I'm open to opportunities involving
+            AI video creation, video editing,
+            digital content production,
+            social media advertising and
+            creative remote work.
 
         </p>
 
 
-        <div
-            class="hero-buttons"
-            style="justify-content:center;"
-        >
+        <div class="contact-buttons">
 
 
             <a
                 href="#portfolio"
                 class="btn btn-primary"
             >
-
-                ▶ &nbsp; View My Projects
-
+                ▶ View My Projects
             </a>
 
 
@@ -2410,9 +3480,7 @@ footer{
                 rel="noopener noreferrer"
                 class="btn btn-outline"
             >
-
                 View GitHub →
-
             </a>
 
 
@@ -2427,20 +3495,119 @@ footer{
 </section>
 
 
-<!-- ======================================================
+<!-- =========================================================
      FOOTER
-====================================================== -->
+========================================================= -->
 
 <footer>
 
-    © 2026 Leniel Bayoran
+    © 2026
+
+    <strong>
+        Leniel Bayoran
+    </strong>
+
     &nbsp; • &nbsp;
+
     AI Video Creator
+
     &nbsp; • &nbsp;
+
+    Video Editor
+
+    &nbsp; • &nbsp;
+
     Digital Content Creator
 
 </footer>
 
 
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+/* Scroll reveal */
+
+const revealElements =
+    document.querySelectorAll(".reveal");
+
+const revealObserver =
+    new IntersectionObserver(
+
+        (entries) => {
+
+            entries.forEach((entry) => {
+
+                if(entry.isIntersecting){
+
+                    entry.target
+                        .classList
+                        .add("active");
+
+                    revealObserver
+                        .unobserve(
+                            entry.target
+                        );
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold:0.12
+        }
+
+    );
+
+
+revealElements.forEach(
+    (element) => {
+
+        revealObserver.observe(element);
+
+    }
+);
+
+
+/* Pause other videos when one video plays */
+
+const portfolioVideos =
+    document.querySelectorAll("video");
+
+portfolioVideos.forEach(
+    (video) => {
+
+        video.addEventListener(
+            "play",
+            () => {
+
+                portfolioVideos.forEach(
+                    (otherVideo) => {
+
+                        if(
+                            otherVideo !== video
+                        ){
+
+                            otherVideo.pause();
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+    }
+);
+
+</script>
+
+
 </body>
+
 </html>
